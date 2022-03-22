@@ -10,10 +10,11 @@ class DateCmdCheckerTest {
     @Test
     void test1() {
         //given
+        String command = "/date";
         DateCmdChecker dateCmdChecker = new DateCmdChecker();
 
         //when
-        Throwable actual = Assertions.catchThrowable(() -> dateCmdChecker.createErrorMessage("date"));
+        Throwable actual = Assertions.catchThrowable(() -> dateCmdChecker.createErrorMessage(command));
 
         //then
         Assertions.assertThat(actual)
