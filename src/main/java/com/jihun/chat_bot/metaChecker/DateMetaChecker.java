@@ -5,11 +5,12 @@ import java.util.Set;
 import java.util.regex.Pattern;
 import org.apache.commons.lang3.math.NumberUtils;
 
-public class DateMetaChecker {
+public class DateMetaChecker implements MetaChecker {
     private static final Pattern DATE_PATTERN = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}$");
     private static final Set<String> metaCommand = Set.of("c", "cal", "calculate");
     private static final Set<String> dayOperator = Set.of("+", "-");
 
+    @Override
     public boolean isMatch(String[] meta) {
         if (isSimpleMeta(meta)) {
             return true;
