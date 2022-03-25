@@ -1,13 +1,11 @@
 package com.jihun.chat_bot.metaChecker;
 
-import java.util.Arrays;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 class DateMetaCheckerTest {
-    //        /date [c|cal|calculate] [|txt:yyyyMMdd] [+|-] [|num:days]
     @DisplayName("성공하는 calculate meta cmd 면, true 을 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
@@ -40,7 +38,7 @@ class DateMetaCheckerTest {
         "calculate 2022-03-09 -",
         "calculate 2022-03-09 + 10",
         "calculate 2022-03-09 - 10"})
-    void test2(String _cmd){
+    void test2(String _cmd) {
         //given
         DateMetaChecker dateMetaChecker = new DateMetaChecker();
         String[] meta = _cmd.split(" ");

@@ -1,5 +1,6 @@
 package com.jihun.chat_bot.metaChecker;
 
+import java.util.List;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,7 +11,7 @@ class CalMetaCheckerTest {
     /**
      * @param _cmd [num:leftOperand] [+|-|*|/] [num:rightOperand]
      */
-    @DisplayName("성공 하는 calculate meta 면, true 을 반환 합니다.")
+    @DisplayName("정상적인 calculate meta 면, false 을 반환 합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
         "0 + 1",
@@ -27,21 +28,20 @@ class CalMetaCheckerTest {
     })
     void test1(String _cmd) {
         //given
-        CalMetaChecker calMetaChecker = new CalMetaChecker();
-        String[] meta = _cmd.split(" ");
+        CalMetaChecker calMetaChecker = new CalMetaChecker(List.of(_cmd.split(" ")));
 
         //when
-        boolean actual = calMetaChecker.isMatch(meta);
+        boolean actual = calMetaChecker.isNotMatch();
 
         //then
         Assertions.assertThat(actual)
-            .isTrue();
+            .isFalse();
     }
 
     /**
      * @param _cmd [num:leftOperand] [+|-|*|/] [num:rightOperand]
      */
-    @DisplayName("operand 가 잘못된 format 이면, false 을 반환 합니다.")
+    @DisplayName("잘못된 operand format 이면, false 을 반환 합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
         "string / 1",
@@ -51,18 +51,17 @@ class CalMetaCheckerTest {
     })
     void test2(String _cmd) {
         //given
-        CalMetaChecker calMetaChecker = new CalMetaChecker();
-        String[] meta = _cmd.split(" ");
+        CalMetaChecker calMetaChecker = new CalMetaChecker(List.of(_cmd.split(" ")));
 
         //when
-        boolean actual = calMetaChecker.isMatch(meta);
+        boolean actual = calMetaChecker.isNotMatch();
 
         //then
         Assertions.assertThat(actual)
-            .isFalse();
+            .isTrue();
     }
 
-    @DisplayName("calculate meta 의 길이가 3 이 아니면, false 을 반환 합니다.")
+    @DisplayName("calculate meta 의 길이가 3 이 아니면, true 을 반환 합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
         "1 / 1 illegalCmd",
@@ -70,18 +69,17 @@ class CalMetaCheckerTest {
     })
     void test3(String _cmd) {
         //given
-        CalMetaChecker calMetaChecker = new CalMetaChecker();
-        String[] meta = _cmd.split(" ");
+        CalMetaChecker calMetaChecker = new CalMetaChecker(List.of(_cmd.split(" ")));
 
         //when
-        boolean actual = calMetaChecker.isMatch(meta);
+        boolean actual = calMetaChecker.isNotMatch();
 
         //then
         Assertions.assertThat(actual)
-            .isFalse();
+            .isTrue();
     }
 
-    @DisplayName("사용할 수 없는 operator 이면, false 을 반환 합니다.")
+    @DisplayName("사용할 수 없는 operator 이면, true 을 반환 합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
         "1 % 1",
@@ -90,15 +88,14 @@ class CalMetaCheckerTest {
     })
     void test5(String _cmd) {
         //given
-        CalMetaChecker calMetaChecker = new CalMetaChecker();
-        String[] meta = _cmd.split(" ");
+        CalMetaChecker calMetaChecker = new CalMetaChecker(List.of(_cmd.split(" ")));
 
         //when
-        boolean actual = calMetaChecker.isMatch(meta);
+        boolean actual = calMetaChecker.isNotMatch();
 
         //then
         Assertions.assertThat(actual)
-            .isFalse();
+            .isTrue();
     }
 
 }
