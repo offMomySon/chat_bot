@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-public class SystemMetaChecker implements MetaChecker {
+public class SystemMetaChecker {
     private static final Set<String> simpleMeta = Set.of("e", "f", "exit", "file");
     private static final Set<String> updateMeta = Set.of("u", "update");
     private static final Set<String> fileMeta = Set.of("f", "file");
@@ -13,7 +13,6 @@ public class SystemMetaChecker implements MetaChecker {
     private static final Pattern relativePathPattern = Pattern.compile(
         "[a-z0-9\\-._~%!$&'()*+,;=@]+(/[a-z0-9\\-._~%!$&'()*+,;=:@]+)*/?");
 
-    @Override
     public boolean isMatch(String[] meta) {
         if (isSimpleMeta(meta)) {
             return true;
