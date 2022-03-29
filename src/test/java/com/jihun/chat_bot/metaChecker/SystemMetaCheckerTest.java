@@ -1,5 +1,6 @@
 package com.jihun.chat_bot.metaChecker;
 
+import com.jihun.chat_bot.metaChecker.system.v1.SystemMetaCheckerV1;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -131,11 +132,11 @@ class SystemMetaCheckerTest {
     @MethodSource(value = "provideExitMeta")
     void test1(String _cmd) {
         //given
-        SystemMetaChecker systemMetaChecker = new SystemMetaChecker();
+        SystemMetaCheckerV1 systemMetaCheckerV1 = new SystemMetaCheckerV1();
         String[] meta = _cmd.split(" ");
 
         //when
-        Boolean actual = systemMetaChecker.isMatch(meta);
+        Boolean actual = systemMetaCheckerV1.isMatch(meta);
 
         //then
         Assertions.assertThat(actual)
@@ -147,11 +148,11 @@ class SystemMetaCheckerTest {
     @MethodSource(value = "provideFileMeta")
     void test2(String _cmd) {
         //given
-        SystemMetaChecker systemMetaChecker = new SystemMetaChecker();
+        SystemMetaCheckerV1 systemMetaCheckerV1 = new SystemMetaCheckerV1();
         String[] meta = _cmd.split(" ");
 
         //when
-        Boolean actual = systemMetaChecker.isMatch(meta);
+        Boolean actual = systemMetaCheckerV1.isMatch(meta);
 
         //then
         Assertions.assertThat(actual)
@@ -163,11 +164,11 @@ class SystemMetaCheckerTest {
     @MethodSource(value = "provideUpdateBannerRandomlyMeta")
     void test3(String _cmd) {
         //given
-        SystemMetaChecker systemMetaChecker = new SystemMetaChecker();
+        SystemMetaCheckerV1 systemMetaCheckerV1 = new SystemMetaCheckerV1();
         String[] meta = _cmd.split(" ");
 
         //when
-        Boolean actual = systemMetaChecker.isMatch(meta);
+        Boolean actual = systemMetaCheckerV1.isMatch(meta);
 
         //then
         Assertions.assertThat(actual)
@@ -179,11 +180,11 @@ class SystemMetaCheckerTest {
     @MethodSource(value = "provideUpdateExitRandomlyMeta")
     void test4(String _cmd) {
         //given
-        SystemMetaChecker systemMetaChecker = new SystemMetaChecker();
+        SystemMetaCheckerV1 systemMetaCheckerV1 = new SystemMetaCheckerV1();
         String[] meta = _cmd.split(" ");
 
         //when
-        Boolean actual = systemMetaChecker.isMatch(meta);
+        Boolean actual = systemMetaCheckerV1.isMatch(meta);
 
         //then
         Assertions.assertThat(actual)
@@ -195,11 +196,11 @@ class SystemMetaCheckerTest {
     @MethodSource(value = "provideUpdateFileRandomlyMeta")
     void test5(String _cmd) {
         //given
-        SystemMetaChecker systemMetaChecker = new SystemMetaChecker();
+        SystemMetaCheckerV1 systemMetaCheckerV1 = new SystemMetaCheckerV1();
         String[] meta = _cmd.split(" ");
 
         //when
-        Boolean actual = systemMetaChecker.isMatch(meta);
+        Boolean actual = systemMetaCheckerV1.isMatch(meta);
 
         //then
         Assertions.assertThat(actual)
@@ -220,11 +221,11 @@ class SystemMetaCheckerTest {
     })
     void test6(String _cmd) {
         //given
-        SystemMetaChecker systemMetaChecker = new SystemMetaChecker();
+        SystemMetaCheckerV1 systemMetaCheckerV1 = new SystemMetaCheckerV1();
         String[] meta = _cmd.split(" ");
 
         //when
-        Boolean actual = systemMetaChecker.isMatch(meta);
+        Boolean actual = systemMetaCheckerV1.isMatch(meta);
 
         //then
         Assertions.assertThat(actual)
@@ -246,11 +247,11 @@ class SystemMetaCheckerTest {
     })
     void test17(String _cmd) {
         //given
-        SystemMetaChecker systemMetaChecker = new SystemMetaChecker();
+        SystemMetaCheckerV1 systemMetaCheckerV1 = new SystemMetaCheckerV1();
         String[] meta = _cmd.split(" ");
 
         //when
-        Boolean actual = systemMetaChecker.isMatch(meta);
+        Boolean actual = systemMetaCheckerV1.isMatch(meta);
 
         //then
         Assertions.assertThat(actual)
@@ -275,11 +276,11 @@ class SystemMetaCheckerTest {
     })
     void test16(String _cmd) {
         //given
-        SystemMetaChecker systemMetaChecker = new SystemMetaChecker();
+        SystemMetaCheckerV1 systemMetaCheckerV1 = new SystemMetaCheckerV1();
         String[] meta = _cmd.split(" ");
 
         //when
-        Boolean actual = systemMetaChecker.isMatch(meta);
+        Boolean actual = systemMetaCheckerV1.isMatch(meta);
 
         //then
         Assertions.assertThat(actual)
