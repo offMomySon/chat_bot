@@ -15,6 +15,11 @@ public class DataCmdErrorMsg {
     public static String create(@NonNull String errorMeta, @NonNull List<String> _usableMetas) {
         String usableMetas = _usableMetas.stream().collect(Collectors.joining(DELIMITER, PREFIX, SUFFIX));
 
-        return String.format(FORMAT, errorMeta, usableMetas);
+        return create(errorMeta, usableMetas);
+    }
+
+    public static String create(@NonNull String errorMeta, @NonNull String advice) {
+
+        return String.format(FORMAT, errorMeta, advice);
     }
 }

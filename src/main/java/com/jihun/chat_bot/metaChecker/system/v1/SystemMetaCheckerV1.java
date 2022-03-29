@@ -1,10 +1,32 @@
-package com.jihun.chat_bot.metaChecker;
+package com.jihun.chat_bot.metaChecker.system.v1;
 
 import java.util.Arrays;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-public class SystemMetaChecker {
+//    /system[e|exit]
+//    /system[f|file]
+//    /system[u|update][b|banner|][txt:banner]
+//    /system[u|update][e|exit][txt:bye]
+//    /system [u|update] [f|file] [txt:relativeFilePath]
+
+
+//
+
+// composite 모듈에서 실패한 모든 모듈의 cmd 모으고 메세지 생성.
+// 각각의 모듈은 상위 단계의 fail cmd 를 모으는 역할.
+
+// 테스트는 이전 달계가 정상 실행되었다고 가정하고 실행.
+
+// 체크 모듈 - 각각의 모듈.- 각각의 모듈 - 끝 모듈.
+// 각각의 모듈 리턴값
+// 1. total fail
+// 2. part fail
+// 3. match success
+
+// 각가의 모듈은 하위 모듈의 리턴값을 기준으로 메세지를 생성한다.
+
+public class SystemMetaCheckerV1 {
     private static final Set<String> simpleMeta = Set.of("e", "f", "exit", "file");
     private static final Set<String> updateMeta = Set.of("u", "update");
     private static final Set<String> fileMeta = Set.of("f", "file");
