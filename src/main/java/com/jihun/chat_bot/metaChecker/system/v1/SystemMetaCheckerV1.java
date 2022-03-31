@@ -4,12 +4,6 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-//    /system[e|exit]
-//    /system[f|file]
-//    /system[u|update][b|banner|][txt:banner]
-//    /system[u|update][e|exit][txt:bye]
-//    /system [u|update] [f|file] [txt:relativeFilePath]
-
 
 //
 
