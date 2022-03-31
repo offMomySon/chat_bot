@@ -1,9 +1,13 @@
 package com.jihun.chat_bot.metaChecker.system.v2;
 
 import java.util.List;
+import java.util.Set;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EmptySource;
+import org.junit.jupiter.params.provider.NullSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import static com.jihun.chat_bot.metaChecker.system.v2.MetaCheckType.MATCH_FAIL_PARTLY_MATCHED;
 import static com.jihun.chat_bot.metaChecker.system.v2.MetaCheckType.MATCH_FAIL_TOTALLY;
@@ -86,4 +90,47 @@ class BannerMetaCheckerTest {
             .isEqualTo(MATCH_FAIL_PARTLY_MATCHED);
     }
 
+    @DisplayName("meta 로 빈문자열을 받으면 에러가 발생합니다.")
+    @ParameterizedTest
+    @NullSource
+    @EmptySource
+    void test5(String _meta) {
+        //given
+        //when
+        Throwable actual = Assertions.catchThrowable(() -> new BannerMetaChecker(List.of(_meta.split(" "))));
+
+        //then
+        Assertions.assertThat(actual)
+            .isNotNull();
+    }
+
+
+    @DisplayName("EMPTY checker 이면, check 를 할 수 없는 상태 입니다.")
+    @Test
+    void test6() {
+        //given
+        BannerMetaChecker bannerMetaChecker = BannerMetaChecker.EMPTY;
+
+        //when
+        boolean actual = bannerMetaChecker.isCheckable();
+
+        //then
+        Assertions.assertThat(actual)
+            .isFalse();
+    }
+
+    @DisplayName("check 할 수 있는 meta 의 리스트를 가져 옵니다.")
+    @Test
+    void test7() {
+        //given
+        BannerMetaChecker bannerMetaChecker = new BannerMetaChecker(List.of("testDummy"));
+        Set<String> possibleMeta = bannerMetaChecker.getPossibleMeta();
+
+        //when
+        boolean actual = possibleMeta.isEmpty();
+
+        //then
+        Assertions.assertThat(actual)
+            .isFalse();
+    }
 }
