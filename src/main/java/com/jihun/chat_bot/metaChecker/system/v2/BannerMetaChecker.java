@@ -13,7 +13,7 @@ import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_SUCCESS;
 public class BannerMetaChecker {
     public static final BannerMetaChecker EMPTY = new BannerMetaChecker(List.of("EMPTY"));
 
-    private static final Set<String> matcher = Set.of("b", "banner");
+    private static final Set<String> MATCHER = Set.of("b", "banner");
     private static final int META_POSITION = 0;
     private static final int MAX_META_LENGTH = 2;
 
@@ -71,16 +71,16 @@ public class BannerMetaChecker {
     }
 
     private boolean isTwoLengthMeta() {
-        return metas.size() == 2 && matcher.contains(metas.get(META_POSITION));
+        return metas.size() == 2 && MATCHER.contains(metas.get(META_POSITION));
     }
 
     private boolean isMetaPartlyMatched() {
         String meta = metas.get(META_POSITION);
 
-        return matcher.stream().anyMatch(m -> m.charAt(0) == meta.charAt(0));
+        return MATCHER.stream().anyMatch(m -> m.charAt(0) == meta.charAt(0));
     }
 
     public Set<String> getPossibleMeta() {
-        return matcher;
+        return MATCHER;
     }
 }
