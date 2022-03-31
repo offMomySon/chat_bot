@@ -1,5 +1,6 @@
 package com.jihun.chat_bot.metaChecker.system.v2;
 
+import com.jihun.chat_bot.metaChecker.MetaCheckType;
 import java.util.List;
 import java.util.Set;
 import org.assertj.core.api.Assertions;
@@ -9,9 +10,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EmptySource;
 import org.junit.jupiter.params.provider.NullSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import static com.jihun.chat_bot.metaChecker.system.v2.MetaCheckType.MATCH_FAIL_PARTLY_MATCHED;
-import static com.jihun.chat_bot.metaChecker.system.v2.MetaCheckType.MATCH_FAIL_TOTALLY;
-import static com.jihun.chat_bot.metaChecker.system.v2.MetaCheckType.MATCH_SUCCESS;
+import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_FAIL_PARTLY_MATCHED;
+import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_FAIL_TOTALLY;
+import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_SUCCESS;
 
 class BannerMetaCheckerTest {
 

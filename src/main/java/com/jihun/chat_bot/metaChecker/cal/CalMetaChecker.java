@@ -1,4 +1,4 @@
-package com.jihun.chat_bot.metaChecker;
+package com.jihun.chat_bot.metaChecker.cal;
 
 import com.jihun.chat_bot.metaChecker.message.DataCmdErrorMsg;
 import com.jihun.chat_bot.metaChecker.message.DataFormatErrorMsg;

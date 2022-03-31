@@ -1,11 +1,12 @@
 package com.jihun.chat_bot.metaChecker.system.v2;
 
+import com.jihun.chat_bot.metaChecker.MetaCheckType;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-import static com.jihun.chat_bot.metaChecker.system.v2.MetaCheckType.MATCH_FAIL_PARTLY_MATCHED;
-import static com.jihun.chat_bot.metaChecker.system.v2.MetaCheckType.MATCH_FAIL_TOTALLY;
-import static com.jihun.chat_bot.metaChecker.system.v2.MetaCheckType.MATCH_SUCCESS;
+import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_FAIL_PARTLY_MATCHED;
+import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_FAIL_TOTALLY;
+import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_SUCCESS;
 
 public class ExitMetaChecker {
     private final static Set<String> matcher = Set.of("e", "exit");
