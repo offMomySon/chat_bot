@@ -3,55 +3,76 @@ package com.jihun.chat_bot.metaChecker.system.v2;
 import com.jihun.chat_bot.metaChecker.MetaCheckType;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_FAIL_PARTLY_MATCHED;
 import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_FAIL_TOTALLY;
 import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_SUCCESS;
 
 public class ExitMetaChecker {
-    private final static Set<String> matcher = Set.of("e", "exit");
-    private final static int metaPosition = 0;
+    public static final ExitMetaChecker EMPTY = new ExitMetaChecker(List.of("EMPTY"));
+
+    private final static Set<String> MATCHER = Set.of("e", "exit");
+    private final static int META_POSITION = 0;
+    private static final int META_LENGTH = 2;
 
     private final List<String> metas;
 
-    public ExitMetaChecker(List<String> metas) {
+    public ExitMetaChecker(List<String> _metas) {
+        if (Objects.isNull(_metas)) {
+            throw new RuntimeException("입력 받은 metas 가 null 입니다.");
+        }
+
+        List<String> metas = _metas.stream()
+            .filter(m -> Objects.nonNull(m) && !m.isEmpty() && !m.isBlank())
+            .collect(Collectors.toList());
+
+        if (Objects.isNull(metas)) {
+            throw new RuntimeException("metas 가 null 입니다.");
+        }
+        if (metas.isEmpty()) {
+            throw new RuntimeException("metas 이 empty 입니다.");
+        }
+
         this.metas = Collections.unmodifiableList(metas);
     }
 
+    private boolean isEmpty() {
+        return this == EMPTY;
+    }
+
+    public boolean isCheckable() {
+        return !isEmpty();
+    }
+
     public MetaCheckType check() {
-        if (metas.size() >= 3) {
+        if (metas.size() != META_LENGTH) {
             return MATCH_FAIL_TOTALLY;
         }
 
-        if (metas.size() == 2 && matcher.contains(getMeta())) {
+        if (isMeta()) {
             return MATCH_SUCCESS;
         }
 
-        if (metas.size() == 1) {
-            return MATCH_SUCCESS;
-        }
-
-        if (isPartlyMatched()) {
+        if (isMetaPartlyMatched()) {
             return MATCH_FAIL_PARTLY_MATCHED;
         }
 
         return MATCH_FAIL_TOTALLY;
     }
 
-    private boolean isPartlyMatched() {
-        String meta = getMeta();
-
-        return matcher.stream().anyMatch(m -> m.charAt(0) == meta.charAt(0));
+    private boolean isMeta() {
+        return MATCHER.contains(metas.get(META_POSITION));
     }
 
-    private String getMeta() {
-        if (metas.size() >= 2) {
-            return metas.get(metaPosition);
-        }
-        throw new RuntimeException("meta 를 얻을 수 없습니다.");
+    private boolean isMetaPartlyMatched() {
+        String meta = metas.get(META_POSITION);
+
+        return MATCHER.stream().anyMatch(m -> m.charAt(0) == meta.charAt(0));
     }
 
     public Set<String> getPossibleMeta() {
-        return matcher;
+        return MATCHER;
     }
 }
