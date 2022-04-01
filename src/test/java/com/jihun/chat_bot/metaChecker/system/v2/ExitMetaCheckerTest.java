@@ -7,8 +7,6 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.EmptySource;
-import org.junit.jupiter.params.provider.NullSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_FAIL_PARTLY_MATCHED;
 import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_FAIL_TOTALLY;
@@ -23,10 +21,10 @@ class ExitMetaCheckerTest {
     })
     void test1(String _meta) {
         //given
-        ExitMetaChecker checker = new ExitMetaChecker(List.of(_meta.split(" ")));
+        ExitMetaChecker checker = new ExitMetaChecker();
 
         //when
-        MetaCheckType actual = checker.check();
+        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
 
         //then
         Assertions.assertThat(actual)
@@ -41,10 +39,10 @@ class ExitMetaCheckerTest {
     })
     void test2(String _meta) {
         //given
-        ExitMetaChecker checker = new ExitMetaChecker(List.of(_meta.split(" ")));
+        ExitMetaChecker checker = new ExitMetaChecker();
 
         //when
-        MetaCheckType actual = checker.check();
+        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
 
         //then
         Assertions.assertThat(actual)
@@ -60,10 +58,10 @@ class ExitMetaCheckerTest {
     })
     void test3(String _meta) {
         //given
-        ExitMetaChecker checker = new ExitMetaChecker(List.of(_meta.split(" ")));
+        ExitMetaChecker checker = new ExitMetaChecker();
 
         //when
-        MetaCheckType actual = checker.check();
+        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
 
         //then
         Assertions.assertThat(actual)
@@ -79,50 +77,21 @@ class ExitMetaCheckerTest {
     })
     void test4(String _meta) {
         //given
-        ExitMetaChecker checker = new ExitMetaChecker(List.of(_meta.split(" ")));
+        ExitMetaChecker checker = new ExitMetaChecker();
 
         //when
-        MetaCheckType actual = checker.check();
+        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
 
         //then
         Assertions.assertThat(actual)
             .isEqualTo(MATCH_FAIL_PARTLY_MATCHED);
     }
 
-    @DisplayName("meta 로 빈문자열을 받으면 에러가 발생합니다.")
-    @ParameterizedTest
-    @NullSource
-    @EmptySource
-    void test5(String _meta) {
-        //given
-        //when
-        Throwable actual = Assertions.catchThrowable(() -> new ExitMetaChecker(List.of(_meta.split(" "))));
-
-        //then
-        Assertions.assertThat(actual)
-            .isNotNull();
-    }
-
-
-    @DisplayName("EMPTY checker 이면, check 를 할 수 없는 상태 입니다.")
-    @Test
-    void test6() {
-        //given
-        ExitMetaChecker exitMetaChecker = ExitMetaChecker.EMPTY;
-
-        //when
-        boolean actual = exitMetaChecker.isCheckable();
-
-        //then
-        Assertions.assertThat(actual)
-            .isFalse();
-    }
-
-    @DisplayName("check 할 수 있는 meta 의 리스트를 가져 옵니다.")
+    @DisplayName("비어있지 않은 check meta 리스트를 가져 옵니다.")
     @Test
     void test7() {
         //given
-        ExitMetaChecker exitMetaChecker = new ExitMetaChecker(List.of("testDummy"));
+        ExitMetaChecker exitMetaChecker = new ExitMetaChecker();
         Set<String> possibleMeta = exitMetaChecker.getPossibleMeta();
 
         //when

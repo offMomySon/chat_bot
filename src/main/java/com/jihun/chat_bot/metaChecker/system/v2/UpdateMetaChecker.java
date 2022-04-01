@@ -8,9 +8,13 @@ import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_FAIL_PARTLY_MAT
 import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_FAIL_TOTALLY;
 import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_SUCCESS;
 
-public class FileMetaChecker extends LastMetaChecker {
-    private final static Set<String> MATCHER = Set.of("f", "file");
-    private static final int META_LENGTH = 2;
+public class UpdateMetaChecker extends MiddleMetaChecker {
+    private static final Set<String> MATCHER = Set.of("u", "update");
+    private static final int META_POSITION = 0;
+
+    protected UpdateMetaChecker(List<MetaChecker> nextMetaCheckers) {
+        super(nextMetaCheckers);
+    }
 
     public MetaCheckType check(List<String> metas) {
         if (Objects.isNull(metas)) {
@@ -21,7 +25,7 @@ public class FileMetaChecker extends LastMetaChecker {
             return MATCH_FAIL_TOTALLY;
         }
 
-        if (isMeta(metas)) {
+        if (isMatch(metas)) {
             return MATCH_SUCCESS;
         }
 
@@ -32,12 +36,12 @@ public class FileMetaChecker extends LastMetaChecker {
         return MATCH_FAIL_TOTALLY;
     }
 
-    private boolean isMeta(List<String> metas) {
-        return MATCHER.contains(metas.get(META_POSITION));
+    public boolean isNotCheckable(List<String> metas) {
+        return metas.isEmpty();
     }
 
-    public boolean isNotCheckable(List<String> metas) {
-        return metas.size() != META_LENGTH;
+    private boolean isMatch(List<String> metas) {
+        return MATCHER.contains(metas.get(META_POSITION));
     }
 
     protected boolean isMetaPartlyMatched(List<String> metas) {
