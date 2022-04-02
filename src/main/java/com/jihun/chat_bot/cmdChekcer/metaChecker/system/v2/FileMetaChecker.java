@@ -8,17 +8,20 @@ import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_FAIL
 import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_FAIL_TOTALLY;
 import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_SUCCESS;
 
-public class FileMetaChecker extends LastMetaChecker {
-    private final static Set<String> MATCHER = Set.of("f", "file");
-    private static final int META_LENGTH = 2;
+public class FileMetaChecker extends AbstractMetaChecker {
+    private static final Set<String> MATCHER = Set.of("f", "file");
+
+    public FileMetaChecker(List<MetaChecker> nextMetaCheckers) {
+        super(nextMetaCheckers);
+    }
 
     public MetaCheckType check(List<String> metas) {
-        if (Objects.isNull(metas)) {
+        if (Objects.isNull(metas) || metas.isEmpty()) {
             return MATCH_FAIL_TOTALLY;
         }
 
-        if (isNotCheckable(metas)) {
-            return MATCH_FAIL_TOTALLY;
+        if (isEndCheckerButLeftMeta(metas)) {
+            return MetaCheckType.MATCH_FAIL_TOTALLY;
         }
 
         if (isMeta(metas)) {
@@ -32,12 +35,14 @@ public class FileMetaChecker extends LastMetaChecker {
         return MATCH_FAIL_TOTALLY;
     }
 
-    private boolean isMeta(List<String> metas) {
-        return MATCHER.contains(metas.get(META_POSITION));
+
+    private boolean isEndCheckerButLeftMeta(List<String> metas) {
+        return metas.size() >= 2 && nextMetaCheckers.isEmpty();
     }
 
-    public boolean isNotCheckable(List<String> metas) {
-        return metas.size() != META_LENGTH;
+    
+    private boolean isMeta(List<String> metas) {
+        return MATCHER.contains(metas.get(META_POSITION));
     }
 
     protected boolean isMetaPartlyMatched(List<String> metas) {

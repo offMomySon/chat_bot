@@ -18,12 +18,11 @@ class BannerSystemCmdCheckerTest {
     @ParameterizedTest
     @ValueSource(strings = {
         "b good",
-        "banner good",
-        "good"
+        "banner good"
     })
     void test1(String _meta) {
         //given
-        BannerMetaChecker checker = new BannerMetaChecker();
+        BannerMetaChecker checker = new BannerMetaChecker(List.of());
 
         //when
         MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
@@ -41,7 +40,7 @@ class BannerSystemCmdCheckerTest {
     })
     void test2(String _meta) {
         //given
-        BannerMetaChecker checker = new BannerMetaChecker();
+        BannerMetaChecker checker = new BannerMetaChecker(List.of());
 
         //when
         MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
@@ -60,7 +59,7 @@ class BannerSystemCmdCheckerTest {
     })
     void test3(String _meta) {
         //given
-        BannerMetaChecker checker = new BannerMetaChecker();
+        BannerMetaChecker checker = new BannerMetaChecker(List.of());
 
         //when
         MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
@@ -74,7 +73,7 @@ class BannerSystemCmdCheckerTest {
     @Test
     void test7() {
         //given
-        BannerMetaChecker bannerMetaChecker = new BannerMetaChecker();
+        BannerMetaChecker bannerMetaChecker = new BannerMetaChecker(List.of());
         Set<String> possibleMeta = bannerMetaChecker.getPossibleMeta();
 
         //when

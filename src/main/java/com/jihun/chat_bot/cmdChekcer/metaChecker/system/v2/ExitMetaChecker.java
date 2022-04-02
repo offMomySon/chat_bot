@@ -5,16 +5,19 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-public class ExitMetaChecker extends LastMetaChecker {
+public class ExitMetaChecker extends AbstractMetaChecker {
     private static final Set<String> MATCHER = Set.of("e", "exit");
-    private static final int META_LENGTH = 2;
+
+    public ExitMetaChecker(List<MetaChecker> nextMetaCheckers) {
+        super(nextMetaCheckers);
+    }
 
     public MetaCheckType check(List<String> metas) {
-        if (Objects.isNull(metas)) {
+        if (Objects.isNull(metas) || metas.isEmpty()) {
             return MetaCheckType.MATCH_FAIL_TOTALLY;
         }
 
-        if (isNotCheckable(metas)) {
+        if (isEndCheckerButLeftMeta(metas)) {
             return MetaCheckType.MATCH_FAIL_TOTALLY;
         }
 
@@ -29,8 +32,8 @@ public class ExitMetaChecker extends LastMetaChecker {
         return MetaCheckType.MATCH_FAIL_TOTALLY;
     }
 
-    public boolean isNotCheckable(List<String> metas) {
-        return metas.size() != META_LENGTH;
+    private boolean isEndCheckerButLeftMeta(List<String> metas) {
+        return metas.size() >= 2 && nextMetaCheckers.isEmpty();
     }
 
     private boolean isMatch(List<String> metas) {

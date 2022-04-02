@@ -22,7 +22,7 @@ class ExitSystemCmdCheckerTest {
     })
     void test1(String _meta) {
         //given
-        ExitMetaChecker checker = new ExitMetaChecker();
+        ExitMetaChecker checker = new ExitMetaChecker(List.of());
 
         //when
         MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
@@ -40,26 +40,7 @@ class ExitSystemCmdCheckerTest {
     })
     void test2(String _meta) {
         //given
-        ExitMetaChecker checker = new ExitMetaChecker();
-
-        //when
-        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
-
-        //then
-        Assertions.assertThat(actual)
-            .isEqualTo(MATCH_FAIL_TOTALLY);
-    }
-
-    @DisplayName("가능한 meta 길이보다 길면, MATCH_FAIL_TOTALLY Type 을 반환합니다.")
-    @ParameterizedTest
-    @ValueSource(strings = {
-        "too long size",
-        "too too long size",
-        "too too too long size"
-    })
-    void test3(String _meta) {
-        //given
-        ExitMetaChecker checker = new ExitMetaChecker();
+        ExitMetaChecker checker = new ExitMetaChecker(List.of());
 
         //when
         MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
@@ -78,7 +59,7 @@ class ExitSystemCmdCheckerTest {
     })
     void test4(String _meta) {
         //given
-        ExitMetaChecker checker = new ExitMetaChecker();
+        ExitMetaChecker checker = new ExitMetaChecker(List.of());
 
         //when
         MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
@@ -92,7 +73,7 @@ class ExitSystemCmdCheckerTest {
     @Test
     void test7() {
         //given
-        ExitMetaChecker exitMetaChecker = new ExitMetaChecker();
+        ExitMetaChecker exitMetaChecker = new ExitMetaChecker(List.of());
         Set<String> possibleMeta = exitMetaChecker.getPossibleMeta();
 
         //when
