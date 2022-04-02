@@ -5,20 +5,19 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-public class UpdateMetaChecker extends MiddleMetaChecker {
+public class UpdateMetaChecker extends AbstractMetaChecker {
     private static final Set<String> MATCHER = Set.of("u", "update");
-    private static final int META_POSITION = 0;
 
-    protected UpdateMetaChecker(List<MetaChecker> nextMetaCheckers) {
+    public UpdateMetaChecker(List<MetaChecker> nextMetaCheckers) {
         super(nextMetaCheckers);
     }
 
     public MetaCheckType check(List<String> metas) {
-        if (Objects.isNull(metas)) {
+        if (Objects.isNull(metas) || metas.isEmpty()) {
             return MetaCheckType.MATCH_FAIL_TOTALLY;
         }
 
-        if (isNotCheckable(metas)) {
+        if (isEndCheckerButLeftMeta(metas)) {
             return MetaCheckType.MATCH_FAIL_TOTALLY;
         }
 
@@ -32,9 +31,9 @@ public class UpdateMetaChecker extends MiddleMetaChecker {
 
         return MetaCheckType.MATCH_FAIL_TOTALLY;
     }
-
-    public boolean isNotCheckable(List<String> metas) {
-        return metas.isEmpty();
+    
+    private boolean isEndCheckerButLeftMeta(List<String> metas) {
+        return metas.size() >= 2 && nextMetaCheckers.isEmpty();
     }
 
     private boolean isMatch(List<String> metas) {

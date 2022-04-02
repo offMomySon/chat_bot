@@ -5,46 +5,45 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-public class BannerMetaChecker extends LastMetaChecker {
+public class BannerMetaChecker extends AbstractMetaChecker {
     private static final Set<String> MATCHER = Set.of("b", "banner");
 
-    private static final int MIN_META_LENGTH = 1;
-    private static final int MAX_META_LENGTH = 2;
+    public BannerMetaChecker(List<MetaChecker> nextMetaCheckers) {
+        super(nextMetaCheckers);
+    }
 
     public MetaCheckType check(List<String> metas) {
-        if (Objects.isNull(metas)) {
+        if (Objects.isNull(metas) || metas.isEmpty()) {
             return MetaCheckType.MATCH_FAIL_TOTALLY;
         }
 
-        if (isNotCheckable(metas)) {
+        if (isEndCheckerButLeftMeta(metas)) {
             return MetaCheckType.MATCH_FAIL_TOTALLY;
         }
-
-        if (isTwoLengthMeta(metas)) {
+        
+        if (isMatch(metas)) {
             return MetaCheckType.MATCH_SUCCESS;
         }
 
-        if (isOneLengthMeta(metas)) {
-            return MetaCheckType.MATCH_SUCCESS;
+        if (isMetaPartlyMatched(metas)) {
+            return MetaCheckType.MATCH_FAIL_PARTLY_MATCHED;
         }
 
         return MetaCheckType.MATCH_FAIL_TOTALLY;
     }
 
-    public boolean isNotCheckable(List<String> metas) {
-        return MIN_META_LENGTH > metas.size() || metas.size() > MAX_META_LENGTH;
+    private boolean isEndCheckerButLeftMeta(List<String> metas) {
+        return metas.size() >= 2 && nextMetaCheckers.isEmpty();
     }
 
-    private boolean isOneLengthMeta(List<String> metas) {
-        return metas.size() == MIN_META_LENGTH;
-    }
-
-    private boolean isTwoLengthMeta(List<String> metas) {
-        return metas.size() == MAX_META_LENGTH && MATCHER.contains(metas.get(META_POSITION));
+    private boolean isMatch(List<String> metas) {
+        return MATCHER.contains(metas.get(META_POSITION));
     }
 
     protected boolean isMetaPartlyMatched(List<String> metas) {
-        return false;
+        String meta = metas.get(META_POSITION);
+
+        return MATCHER.stream().anyMatch(m -> m.charAt(0) == meta.charAt(0));
     }
 
     public Set<String> getPossibleMeta() {

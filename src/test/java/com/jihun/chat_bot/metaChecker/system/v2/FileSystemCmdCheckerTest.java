@@ -22,7 +22,7 @@ class FileSystemCmdCheckerTest {
     })
     void test1(String _meta) {
         //given
-        FileMetaChecker checker = new FileMetaChecker();
+        FileMetaChecker checker = new FileMetaChecker(List.of());
 
         //when
         MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
@@ -40,7 +40,7 @@ class FileSystemCmdCheckerTest {
     })
     void test2(String _meta) {
         //given
-        FileMetaChecker checker = new FileMetaChecker();
+        FileMetaChecker checker = new FileMetaChecker(List.of());
 
         //when
         MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
@@ -59,7 +59,7 @@ class FileSystemCmdCheckerTest {
     })
     void test3(String _meta) {
         //given
-        FileMetaChecker checker = new FileMetaChecker();
+        FileMetaChecker checker = new FileMetaChecker(List.of());
 
         //when
         MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
@@ -78,7 +78,7 @@ class FileSystemCmdCheckerTest {
     })
     void test4(String _meta) {
         //given
-        FileMetaChecker checker = new FileMetaChecker();
+        FileMetaChecker checker = new FileMetaChecker(List.of());
 
         //when
         MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
@@ -92,7 +92,7 @@ class FileSystemCmdCheckerTest {
     @Test
     void test7() {
         //given
-        FileMetaChecker exitMetaChecker = new FileMetaChecker();
+        FileMetaChecker exitMetaChecker = new FileMetaChecker(List.of());
         Set<String> possibleMeta = exitMetaChecker.getPossibleMeta();
 
         //when
