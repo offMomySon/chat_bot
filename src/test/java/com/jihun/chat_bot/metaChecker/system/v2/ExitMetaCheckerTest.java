@@ -1,7 +1,7 @@
 package com.jihun.chat_bot.metaChecker.system.v2;
 
 import com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType;
-import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2.BannerMetaChecker;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2.ExitMetaChecker;
 import java.util.List;
 import java.util.Set;
 import org.assertj.core.api.Assertions;
@@ -9,20 +9,20 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_FAIL_PARTLY_MATCHED;
 import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_FAIL_TOTALLY;
 import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_SUCCESS;
 
-class BannerSystemCmdCheckerTest {
-
+class ExitMetaCheckerTest {
     @DisplayName("meta 가 맞으면, MATCH_SUCCESS Type 을 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
-        "b good",
-        "banner good"
+        "e good",
+        "exit good"
     })
     void test1(String _meta) {
         //given
-        BannerMetaChecker checker = new BannerMetaChecker(List.of());
+        ExitMetaChecker checker = new ExitMetaChecker(List.of());
 
         //when
         MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
@@ -40,7 +40,7 @@ class BannerSystemCmdCheckerTest {
     })
     void test2(String _meta) {
         //given
-        BannerMetaChecker checker = new BannerMetaChecker(List.of());
+        ExitMetaChecker checker = new ExitMetaChecker(List.of());
 
         //when
         MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
@@ -50,31 +50,31 @@ class BannerSystemCmdCheckerTest {
             .isEqualTo(MATCH_FAIL_TOTALLY);
     }
 
-    @DisplayName("가능한 meta 길이보다 길면, MATCH_FAIL_TOTALLY Type 을 반환합니다.")
+    @DisplayName("meta 중 일부만 일치하면, MATCH_FAIL_TOTALLY Type 을 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
-        "too long size",
-        "too too long size",
-        "too too too long size"
+        "ePartly match",
+        "exitPartly match",
+        "exit! bb"
     })
-    void test3(String _meta) {
+    void test4(String _meta) {
         //given
-        BannerMetaChecker checker = new BannerMetaChecker(List.of());
+        ExitMetaChecker checker = new ExitMetaChecker(List.of());
 
         //when
         MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
 
         //then
         Assertions.assertThat(actual)
-            .isEqualTo(MATCH_FAIL_TOTALLY);
+            .isEqualTo(MATCH_FAIL_PARTLY_MATCHED);
     }
 
     @DisplayName("비어있지 않은 check meta 리스트를 가져 옵니다.")
     @Test
     void test7() {
         //given
-        BannerMetaChecker bannerMetaChecker = new BannerMetaChecker(List.of());
-        Set<String> possibleMeta = bannerMetaChecker.getPossibleMeta();
+        ExitMetaChecker exitMetaChecker = new ExitMetaChecker(List.of());
+        Set<String> possibleMeta = exitMetaChecker.getPossibleMeta();
 
         //when
         boolean actual = possibleMeta.isEmpty();

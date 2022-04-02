@@ -12,7 +12,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-class UpdateSystemCmdCheckerTest {
+class UpdateMetaCheckerTest {
 
     @DisplayName("사용 가능한 meta 아니면, error msg 를 반환합니다. ")
     @ParameterizedTest

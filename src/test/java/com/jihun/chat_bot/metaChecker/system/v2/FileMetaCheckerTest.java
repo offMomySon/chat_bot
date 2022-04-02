@@ -13,7 +13,7 @@ import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_FAIL
 import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_FAIL_TOTALLY;
 import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_SUCCESS;
 
-class FileSystemCmdCheckerTest {
+class FileMetaCheckerTest {
     @DisplayName("meta 가 맞으면, MATCH_SUCCESS Type 을 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
