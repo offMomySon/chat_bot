@@ -1,11 +1,12 @@
 package com.jihun.chat_bot.metaChecker;
 
+import com.jihun.chat_bot.cmdChekcer.metaChecker.DateMetaChecker;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-class DateMetaCheckerTest {
+class DateSystemCmdCheckerTest {
     @DisplayName("성공하는 calculate meta cmd 면, true 을 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {

@@ -1,6 +1,6 @@
 package com.jihun.chat_bot.metaChecker;
 
-import com.jihun.chat_bot.metaChecker.system.v1.SystemMetaCheckerV1;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v1.SystemMetaCheckerV1;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -11,7 +11,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-class SystemMetaCheckerTest {
+class SystemSystemCmdCheckerTest {
 
     private static List<String> provideUpdateExitRandomlyMeta() {
         List<String> metas = provideUpdateExit();

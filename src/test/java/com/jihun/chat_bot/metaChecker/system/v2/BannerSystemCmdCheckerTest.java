@@ -1,6 +1,7 @@
 package com.jihun.chat_bot.metaChecker.system.v2;
 
-import com.jihun.chat_bot.metaChecker.MetaCheckType;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2.BannerMetaChecker;
 import java.util.List;
 import java.util.Set;
 import org.assertj.core.api.Assertions;
@@ -8,10 +9,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_FAIL_TOTALLY;
-import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_SUCCESS;
+import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_FAIL_TOTALLY;
+import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_SUCCESS;
 
-class BannerMetaCheckerTest {
+class BannerSystemCmdCheckerTest {
 
     @DisplayName("meta 가 맞으면, MATCH_SUCCESS Type 을 반환합니다.")
     @ParameterizedTest

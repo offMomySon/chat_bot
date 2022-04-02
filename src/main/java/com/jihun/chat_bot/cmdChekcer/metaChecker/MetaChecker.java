@@ -1,4 +1,4 @@
-package com.jihun.chat_bot.metaChecker;
+package com.jihun.chat_bot.cmdChekcer.metaChecker;
 
 public interface MetaChecker {
     String createErrorMessage();

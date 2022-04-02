@@ -1,13 +1,13 @@
 package com.jihun.chat_bot.metaChecker;
 
-import com.jihun.chat_bot.metaChecker.cal.CalMetaChecker;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.cal.CalMetaChecker;
 import java.util.List;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-class CalMetaCheckerTest {
+class CalSystemCmdCheckerTest {
 
     /**
      * @param _cmd [num:leftOperand] [+|-|*|/] [num:rightOperand]

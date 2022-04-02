@@ -1,13 +1,17 @@
 package com.jihun.chat_bot.metaChecker.system.v2;
 
-import com.jihun.chat_bot.metaChecker.message.MetaErrorMsg;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.message.MetaErrorMsg;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2.BannerMetaChecker;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2.ExitMetaChecker;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2.FileMetaChecker;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2.UpdateMetaChecker;
 import java.util.List;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-class UpdateMetaCheckerTest {
+class UpdateSystemCmdCheckerTest {
 
     @DisplayName("정상적인 meta 이면, EMPTY error msg 를 반환합니다. ")
     @ParameterizedTest

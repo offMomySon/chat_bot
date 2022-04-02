@@ -1,7 +1,7 @@
-package com.jihun.chat_bot.metaChecker.cal;
+package com.jihun.chat_bot.cmdChekcer.metaChecker.cal;
 
-import com.jihun.chat_bot.metaChecker.message.DataCmdErrorMsg;
-import com.jihun.chat_bot.metaChecker.message.DataFormatErrorMsg;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.message.DataCmdErrorMsg;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.message.DataFormatErrorMsg;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;

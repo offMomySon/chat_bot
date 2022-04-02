@@ -1,12 +1,12 @@
-package com.jihun.chat_bot.metaChecker.system.v2;
+package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2;
 
-import com.jihun.chat_bot.metaChecker.MetaCheckType;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_FAIL_PARTLY_MATCHED;
-import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_FAIL_TOTALLY;
-import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_SUCCESS;
+import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_FAIL_PARTLY_MATCHED;
+import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_FAIL_TOTALLY;
+import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_SUCCESS;
 
 public class FileMetaChecker extends LastMetaChecker {
     private final static Set<String> MATCHER = Set.of("f", "file");

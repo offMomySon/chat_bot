@@ -1,7 +1,7 @@
-package com.jihun.chat_bot.metaChecker.system.v2;
+package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2;
 
-import com.jihun.chat_bot.metaChecker.MetaCheckType;
-import com.jihun.chat_bot.metaChecker.message.MetaErrorMsg;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.message.MetaErrorMsg;
 import java.util.List;
 import java.util.Set;
 

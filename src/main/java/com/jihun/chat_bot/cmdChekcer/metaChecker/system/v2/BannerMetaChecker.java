@@ -1,11 +1,9 @@
-package com.jihun.chat_bot.metaChecker.system.v2;
+package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2;
 
-import com.jihun.chat_bot.metaChecker.MetaCheckType;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_FAIL_TOTALLY;
-import static com.jihun.chat_bot.metaChecker.MetaCheckType.MATCH_SUCCESS;
 
 public class BannerMetaChecker extends LastMetaChecker {
     private static final Set<String> MATCHER = Set.of("b", "banner");
@@ -15,22 +13,22 @@ public class BannerMetaChecker extends LastMetaChecker {
 
     public MetaCheckType check(List<String> metas) {
         if (Objects.isNull(metas)) {
-            return MATCH_FAIL_TOTALLY;
+            return MetaCheckType.MATCH_FAIL_TOTALLY;
         }
 
         if (isNotCheckable(metas)) {
-            return MATCH_FAIL_TOTALLY;
+            return MetaCheckType.MATCH_FAIL_TOTALLY;
         }
 
         if (isTwoLengthMeta(metas)) {
-            return MATCH_SUCCESS;
+            return MetaCheckType.MATCH_SUCCESS;
         }
 
         if (isOneLengthMeta(metas)) {
-            return MATCH_SUCCESS;
+            return MetaCheckType.MATCH_SUCCESS;
         }
 
-        return MATCH_FAIL_TOTALLY;
+        return MetaCheckType.MATCH_FAIL_TOTALLY;
     }
 
     public boolean isNotCheckable(List<String> metas) {

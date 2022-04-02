@@ -1,4 +1,4 @@
-package com.jihun.chat_bot.metaChecker.system.v2;
+package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2;
 
 import java.util.List;
 

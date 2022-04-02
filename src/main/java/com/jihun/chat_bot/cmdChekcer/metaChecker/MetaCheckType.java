@@ -1,4 +1,4 @@
-package com.jihun.chat_bot.metaChecker;
+package com.jihun.chat_bot.cmdChekcer.metaChecker;
 
 public enum MetaCheckType {
     MATCH_FAIL_TOTALLY("meta cmd totally fail"),
