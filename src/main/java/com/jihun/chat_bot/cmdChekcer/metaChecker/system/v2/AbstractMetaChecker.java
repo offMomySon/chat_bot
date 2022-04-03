@@ -11,10 +11,22 @@ import java.util.stream.Collectors;
 
 public abstract class AbstractMetaChecker implements MetaChecker {
     protected final List<MetaChecker> nextMetaCheckers;
-    protected static final int META_POSITION = 0;
+    protected final String meta;
 
-    protected AbstractMetaChecker(List<MetaChecker> nextMetaCheckers) {
+    protected AbstractMetaChecker(List<MetaChecker> nextMetaCheckers, String meta) {
         this.nextMetaCheckers = validateMetaCheckers(nextMetaCheckers);
+        this.meta = validateMeta(meta);
+    }
+
+    private String validateMeta(String meta) {
+        if (Objects.isNull(meta)) {
+            throw new RuntimeException("meta 가 null 입니다.");
+        }
+        if (meta.isBlank() || meta.isEmpty()) {
+            throw new RuntimeException("meta 가 존재하지 않습니다.");
+        }
+
+        return meta;
     }
 
     private List<MetaChecker> validateMetaCheckers(List<MetaChecker> nextMetaCheckers) {
@@ -26,15 +38,11 @@ public abstract class AbstractMetaChecker implements MetaChecker {
             nextMetaCheckers.stream().filter(Objects::nonNull).collect(Collectors.toList()));
     }
 
-    protected abstract boolean isMetaPartlyMatched(List<String> metas);
+    protected abstract boolean isMetaPartlyMatched();
 
     @Override
-    public MetaErrorMsg createErrorMsg(List<String> metas) {
-        if (Objects.isNull(metas)) {
-            throw new RuntimeException("metas 가 null 입니다.");
-        }
-
-        if (nextMetaCheckers.isEmpty() && metas.size() == 1) {
+    public MetaErrorMsg createErrorMsg() {
+        if (nextMetaCheckers.isEmpty()) {
             return MetaErrorMsg.EMPTY;
         }
 
@@ -42,10 +50,10 @@ public abstract class AbstractMetaChecker implements MetaChecker {
         Set<String> totallyFailedMetas = new HashSet<>();
 
         for (MetaChecker metaChecker : nextMetaCheckers) {
-            MetaCheckType check = metaChecker.check(metas.subList(1, metas.size()));
+            MetaCheckType check = metaChecker.check();
 
             if (check == MetaCheckType.MATCH_SUCCESS) {
-                return metaChecker.createErrorMsg(metas.subList(1, metas.size()));
+                return metaChecker.createErrorMsg();
             }
 
             if (check == MetaCheckType.MATCH_FAIL_PARTLY_MATCHED) {
@@ -58,9 +66,9 @@ public abstract class AbstractMetaChecker implements MetaChecker {
         }
 
         if (partlyMatchedMetas.isEmpty()) {
-            return MetaErrorMsg.create(metas.get(0), totallyFailedMetas);
+            return MetaErrorMsg.create(meta, totallyFailedMetas);
         }
 
-        return MetaErrorMsg.create(metas.get(0), partlyMatchedMetas);
+        return MetaErrorMsg.create(meta, partlyMatchedMetas);
     }
 }

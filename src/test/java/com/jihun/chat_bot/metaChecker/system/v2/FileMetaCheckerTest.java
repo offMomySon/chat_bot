@@ -17,15 +17,15 @@ class FileMetaCheckerTest {
     @DisplayName("meta 가 맞으면, MATCH_SUCCESS Type 을 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
-        "f good",
-        "file good"
+        "f",
+        "file"
     })
     void test1(String _meta) {
         //given
-        FileMetaChecker checker = new FileMetaChecker(List.of());
+        FileMetaChecker checker = new FileMetaChecker(List.of(), _meta);
 
         //when
-        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
+        MetaCheckType actual = checker.check();
 
         //then
         Assertions.assertThat(actual)
@@ -35,34 +35,15 @@ class FileMetaCheckerTest {
     @DisplayName("meta 가 한글자도 일치하지 않으면, MATCH_FAIL_TOTALLY Type 을 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
-        "notGood meta",
-        "n meta"
+        "notGood",
+        "n"
     })
     void test2(String _meta) {
         //given
-        FileMetaChecker checker = new FileMetaChecker(List.of());
+        FileMetaChecker checker = new FileMetaChecker(List.of(), _meta);
 
         //when
-        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
-
-        //then
-        Assertions.assertThat(actual)
-            .isEqualTo(MATCH_FAIL_TOTALLY);
-    }
-
-    @DisplayName("가능한 meta 길이보다 길면, MATCH_FAIL_TOTALLY Type 을 반환합니다.")
-    @ParameterizedTest
-    @ValueSource(strings = {
-        "too long size",
-        "too too long size",
-        "too too too long size"
-    })
-    void test3(String _meta) {
-        //given
-        FileMetaChecker checker = new FileMetaChecker(List.of());
-
-        //when
-        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
+        MetaCheckType actual = checker.check();
 
         //then
         Assertions.assertThat(actual)
@@ -72,16 +53,16 @@ class FileMetaCheckerTest {
     @DisplayName("meta 중 일부만 일치하면, MATCH_FAIL_TOTALLY Type 을 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
-        "fPartly match",
-        "filePartly match",
-        "file! bb"
+        "fPartly",
+        "filePartly",
+        "file!"
     })
     void test4(String _meta) {
         //given
-        FileMetaChecker checker = new FileMetaChecker(List.of());
+        FileMetaChecker checker = new FileMetaChecker(List.of(), _meta);
 
         //when
-        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
+        MetaCheckType actual = checker.check();
 
         //then
         Assertions.assertThat(actual)
@@ -92,7 +73,7 @@ class FileMetaCheckerTest {
     @Test
     void test7() {
         //given
-        FileMetaChecker exitMetaChecker = new FileMetaChecker(List.of());
+        FileMetaChecker exitMetaChecker = new FileMetaChecker(List.of(), "file");
         Set<String> possibleMeta = exitMetaChecker.getPossibleMeta();
 
         //when
