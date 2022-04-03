@@ -72,7 +72,7 @@ class UpdateMetaCheckerTest {
 
         //update txt
         TextMetaChecker t1 = null;
-        if (metas.length >= 2) {
+        if (metas.length == 2) {
             t1 = new TextMetaChecker(List.of(), metas[1]);
         }
 
@@ -83,7 +83,7 @@ class UpdateMetaCheckerTest {
         TextMetaChecker t4 = null;
         FileMetaChecker f1 = null;
 
-        if (metas.length >= 3) {
+        if (metas.length == 3) {
             //update b txt
             t2 = new TextMetaChecker(List.of(), metas[2]);
             b1 = new BannerMetaChecker(List.of(t2), metas[1]);
@@ -98,12 +98,12 @@ class UpdateMetaCheckerTest {
         }
 
         UpdateMetaChecker updateMetaChecker = null;
-        if (metas.length <= 2) {
+        if (metas.length == 2) {
             updateMetaChecker = new UpdateMetaChecker(List.of(t1), metas[0]);
         }
         if (metas.length == 3) {
             updateMetaChecker = new UpdateMetaChecker(
-                List.of(t1, b1, e1, f1), metas[0]);
+                List.of(b1, e1, f1), metas[0]);
         }
 
         //when
