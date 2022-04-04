@@ -17,15 +17,15 @@ class BannerMetaCheckerTest {
     @DisplayName("meta 가 맞으면, MATCH_SUCCESS Type 을 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
-        "b good",
-        "banner good"
+        "b",
+        "banner"
     })
     void test1(String _meta) {
         //given
-        BannerMetaChecker checker = new BannerMetaChecker(List.of());
+        BannerMetaChecker checker = new BannerMetaChecker(List.of(), _meta);
 
         //when
-        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
+        MetaCheckType actual = checker.check();
 
         //then
         Assertions.assertThat(actual)
@@ -35,34 +35,15 @@ class BannerMetaCheckerTest {
     @DisplayName("meta 가 한글자도 일치하지 않으면, MATCH_FAIL_TOTALLY Type 을 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
-        "notGood meta",
-        "n meta"
+        "notGood",
+        "n"
     })
     void test2(String _meta) {
         //given
-        BannerMetaChecker checker = new BannerMetaChecker(List.of());
+        BannerMetaChecker checker = new BannerMetaChecker(List.of(), _meta);
 
         //when
-        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
-
-        //then
-        Assertions.assertThat(actual)
-            .isEqualTo(MATCH_FAIL_TOTALLY);
-    }
-
-    @DisplayName("가능한 meta 길이보다 길면, MATCH_FAIL_TOTALLY Type 을 반환합니다.")
-    @ParameterizedTest
-    @ValueSource(strings = {
-        "too long size",
-        "too too long size",
-        "too too too long size"
-    })
-    void test3(String _meta) {
-        //given
-        BannerMetaChecker checker = new BannerMetaChecker(List.of());
-
-        //when
-        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
+        MetaCheckType actual = checker.check();
 
         //then
         Assertions.assertThat(actual)
@@ -73,7 +54,7 @@ class BannerMetaCheckerTest {
     @Test
     void test7() {
         //given
-        BannerMetaChecker bannerMetaChecker = new BannerMetaChecker(List.of());
+        BannerMetaChecker bannerMetaChecker = new BannerMetaChecker(List.of(), "banner");
         Set<String> possibleMeta = bannerMetaChecker.getPossibleMeta();
 
         //when

@@ -11,6 +11,5 @@
         <module name="chat_bot.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="11" />
   </component>
 </project>

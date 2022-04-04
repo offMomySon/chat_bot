@@ -1,16 +1,16 @@
-package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2;
+package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3;
 
 import com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType;
-import java.util.List;
 import java.util.Set;
 
-public class ExitMetaChecker extends AbstractMetaChecker {
-    private static final Set<String> MATCHER = Set.of("e", "exit");
+public class UpdateMetaCheckerV3 extends ChainMetaCheckerV3 {
+    private static final Set<String> MATCHER = Set.of("u", "update");
 
-    public ExitMetaChecker(List<MetaChecker> nextMetaCheckers, String meta) {
-        super(nextMetaCheckers, meta);
+    public UpdateMetaCheckerV3(String meta, MetaCheckerV3 next) {
+        super(meta, next);
     }
 
+    @Override
     public MetaCheckType check() {
         if (isMatch()) {
             return MetaCheckType.MATCH_SUCCESS;
@@ -27,11 +27,12 @@ public class ExitMetaChecker extends AbstractMetaChecker {
         return MATCHER.contains(meta);
     }
 
-    protected boolean isMetaPartlyMatched() {
+    private boolean isMetaPartlyMatched() {
         return MATCHER.stream().anyMatch(m -> m.charAt(0) == meta.charAt(0));
     }
 
-    public Set<String> getPossibleMeta() {
+    @Override
+    public Set<String> getCheckMetas() {
         return MATCHER;
     }
 }

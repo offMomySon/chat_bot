@@ -2,47 +2,32 @@ package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2;
 
 import com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 
 public class BannerMetaChecker extends AbstractMetaChecker {
     private static final Set<String> MATCHER = Set.of("b", "banner");
 
-    public BannerMetaChecker(List<MetaChecker> nextMetaCheckers) {
-        super(nextMetaCheckers);
+    public BannerMetaChecker(List<MetaChecker> nextMetaCheckers, String meta) {
+        super(nextMetaCheckers, meta);
     }
 
-    public MetaCheckType check(List<String> metas) {
-        if (Objects.isNull(metas) || metas.isEmpty()) {
-            return MetaCheckType.MATCH_FAIL_TOTALLY;
-        }
-
-        if (isEndCheckerButLeftMeta(metas)) {
-            return MetaCheckType.MATCH_FAIL_TOTALLY;
-        }
-        
-        if (isMatch(metas)) {
+    public MetaCheckType check() {
+        if (isMatch()) {
             return MetaCheckType.MATCH_SUCCESS;
         }
 
-        if (isMetaPartlyMatched(metas)) {
+        if (isMetaPartlyMatched()) {
             return MetaCheckType.MATCH_FAIL_PARTLY_MATCHED;
         }
 
         return MetaCheckType.MATCH_FAIL_TOTALLY;
     }
 
-    private boolean isEndCheckerButLeftMeta(List<String> metas) {
-        return metas.size() >= 2 && nextMetaCheckers.isEmpty();
+    private boolean isMatch() {
+        return MATCHER.contains(meta);
     }
 
-    private boolean isMatch(List<String> metas) {
-        return MATCHER.contains(metas.get(META_POSITION));
-    }
-
-    protected boolean isMetaPartlyMatched(List<String> metas) {
-        String meta = metas.get(META_POSITION);
-
+    protected boolean isMetaPartlyMatched() {
         return MATCHER.stream().anyMatch(m -> m.charAt(0) == meta.charAt(0));
     }
 

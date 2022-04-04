@@ -17,15 +17,15 @@ class ExitMetaCheckerTest {
     @DisplayName("meta 가 맞으면, MATCH_SUCCESS Type 을 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
-        "e good",
-        "exit good"
+        "e",
+        "exit"
     })
     void test1(String _meta) {
         //given
-        ExitMetaChecker checker = new ExitMetaChecker(List.of());
+        ExitMetaChecker checker = new ExitMetaChecker(List.of(), _meta);
 
         //when
-        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
+        MetaCheckType actual = checker.check();
 
         //then
         Assertions.assertThat(actual)
@@ -35,15 +35,15 @@ class ExitMetaCheckerTest {
     @DisplayName("meta 가 한글자도 일치하지 않으면, MATCH_FAIL_TOTALLY Type 을 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
-        "notGood meta",
-        "n meta"
+        "notGood",
+        "n"
     })
     void test2(String _meta) {
         //given
-        ExitMetaChecker checker = new ExitMetaChecker(List.of());
+        ExitMetaChecker checker = new ExitMetaChecker(List.of(), _meta);
 
         //when
-        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
+        MetaCheckType actual = checker.check();
 
         //then
         Assertions.assertThat(actual)
@@ -53,16 +53,16 @@ class ExitMetaCheckerTest {
     @DisplayName("meta 중 일부만 일치하면, MATCH_FAIL_TOTALLY Type 을 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
-        "ePartly match",
-        "exitPartly match",
-        "exit! bb"
+        "ePartly",
+        "exitPartly",
+        "exit!ß"
     })
     void test4(String _meta) {
         //given
-        ExitMetaChecker checker = new ExitMetaChecker(List.of());
+        ExitMetaChecker checker = new ExitMetaChecker(List.of(), _meta);
 
         //when
-        MetaCheckType actual = checker.check(List.of(_meta.split(" ")));
+        MetaCheckType actual = checker.check();
 
         //then
         Assertions.assertThat(actual)
@@ -73,7 +73,7 @@ class ExitMetaCheckerTest {
     @Test
     void test7() {
         //given
-        ExitMetaChecker exitMetaChecker = new ExitMetaChecker(List.of());
+        ExitMetaChecker exitMetaChecker = new ExitMetaChecker(List.of(), "exit");
         Set<String> possibleMeta = exitMetaChecker.getPossibleMeta();
 
         //when
