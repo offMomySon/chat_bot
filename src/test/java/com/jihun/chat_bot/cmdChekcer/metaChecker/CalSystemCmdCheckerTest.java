@@ -1,4 +1,4 @@
-package com.jihun.chat_bot.metaChecker;
+package com.jihun.chat_bot.cmdChekcer.metaChecker;
 
 import com.jihun.chat_bot.cmdChekcer.metaChecker.cal.CalMetaChecker;
 import java.util.List;
