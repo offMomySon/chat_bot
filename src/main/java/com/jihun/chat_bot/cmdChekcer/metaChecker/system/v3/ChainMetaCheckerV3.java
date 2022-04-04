@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.Set;
 
 public abstract class ChainMetaCheckerV3 implements MetaCheckerV3 {
-    public static final MetaCheckerV3 END = new MetaCheckerV3() {
+    public static final MetaCheckerV3 EMPTY = new MetaCheckerV3() {
         @Override
         public MetaCheckType check() {
             return null;
@@ -18,43 +18,57 @@ public abstract class ChainMetaCheckerV3 implements MetaCheckerV3 {
         }
 
         @Override
-        public Set<String> getPossibleMeta() {
+        public Set<String> getCheckMetas() {
+            return null;
+        }
+
+        @Override
+        public String getMeta() {
             return null;
         }
     };
 
-    protected final MetaCheckerV3 next;
     protected final String meta;
+    protected final MetaCheckerV3 next;
 
-    protected ChainMetaCheckerV3(MetaCheckerV3 next, String meta) {
-        this.next = validateMetaChecker(next);
+    public ChainMetaCheckerV3(String meta, MetaCheckerV3 next) {
         this.meta = validateMeta(meta);
+        this.next = validateMetaChecker(next);
     }
 
-    private MetaCheckerV3 validateMetaChecker(MetaCheckerV3 next){
-        if(Objects.isNull(next)){
+    private MetaCheckerV3 validateMetaChecker(MetaCheckerV3 next) {
+        if (Objects.isNull(next)) {
             throw new RuntimeException("next metaChecker 가 null 입니다.");
         }
         return next;
     }
 
-    private String validateMeta(String meta){
-        if(Objects.isNull(meta)){
+    private String validateMeta(String meta) {
+        if (Objects.isNull(meta)) {
             throw new RuntimeException("meta 가 null 입니다.");
         }
         return meta;
     }
 
     @Override
+    public String getMeta() {
+        return meta;
+    }
+
+    @Override
     public MetaErrorMsg createMetaErrorMsg() {
-        MetaCheckType check = check();
-        if (check == MetaCheckType.MATCH_FAIL_PARTLY_MATCHED) {
-            return MetaErrorMsg.create(meta, getPossibleMeta());
-        }
-        if (check == MetaCheckType.MATCH_FAIL_TOTALLY) {
-            return MetaErrorMsg.create(meta, getPossibleMeta());
+        if (next == EMPTY) {
+            return MetaErrorMsg.EMPTY;
         }
 
+        MetaCheckType check = check();
+
+        if (check == MetaCheckType.MATCH_FAIL_PARTLY_MATCHED) {
+            return MetaErrorMsg.create(meta, getCheckMetas());
+        }
+        if (check == MetaCheckType.MATCH_FAIL_TOTALLY) {
+            return MetaErrorMsg.create(meta, getCheckMetas());
+        }
         return next.createMetaErrorMsg();
     }
 }

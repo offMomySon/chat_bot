@@ -1,14 +1,13 @@
 package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3;
 
 import com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType;
-import com.jihun.chat_bot.cmdChekcer.metaChecker.message.MetaErrorMsg;
 import java.util.Set;
 
 public class TextMetaCheckerV3 extends ChainMetaCheckerV3 {
     private static final Set<String> MATCHER = Set.of("TXT");
 
-    public TextMetaCheckerV3(MetaCheckerV3 next, String meta) {
-        super(next, meta);
+    public TextMetaCheckerV3(String meta, MetaCheckerV3 next) {
+        super(meta, next);
     }
 
     @Override
@@ -17,7 +16,7 @@ public class TextMetaCheckerV3 extends ChainMetaCheckerV3 {
     }
 
     @Override
-    public Set<String> getPossibleMeta() {
+    public Set<String> getCheckMetas() {
         return MATCHER;
     }
 }

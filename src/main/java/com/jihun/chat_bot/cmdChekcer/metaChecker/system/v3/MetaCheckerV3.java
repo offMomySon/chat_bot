@@ -9,5 +9,7 @@ public interface MetaCheckerV3 {
 
     MetaErrorMsg createMetaErrorMsg();
 
-    Set<String> getPossibleMeta();
+    Set<String> getCheckMetas();
+
+    String getMeta();
 }
