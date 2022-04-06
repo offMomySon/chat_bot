@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c8a247a-e37a-49f4-b7e0-17643cfa4af0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/BannerMetaCheckerV3Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/CompositeMetaCheckerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/ExitMetaCheckerV3Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/FileMetaCheckerV3Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/TextMetaCheckerV3Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/ChainMetaCheckerV3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/ChainMetaCheckerV3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/CompositeMetaChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/CompositeMetaChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/ChainMetaCheckerV3Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/UpdateMetaCheckerV3Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/UpdateMetaCheckerV3Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/checker/cmd/CalCmdChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/checker/cmd/CalCmdChecker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,23 +22,8 @@
       </state>
     </system>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JUnit5 Test Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
   </component>
   <component name="GitToolBoxStore">
     <option name="recentBranches">
@@ -60,7 +35,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="develop" />
-                    <option name="lastUsedInstant" value="1649079921" />
+                    <option name="lastUsedInstant" value="1649250471" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/checker_test" />
+                    <option name="lastUsedInstant" value="1649248529" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feature/v3_chaining" />
@@ -75,177 +54,14 @@
       </RecentBranches>
     </option>
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="27NNJv6zBQMJpbjmy2yR5OtjvDO" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Gradle.CompositeMetaCheckerTest.test0">
-    <configuration name="CompositeMetaCheckerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3.CompositeMetaCheckerTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="CompositeMetaCheckerTest.test0" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3.CompositeMetaCheckerTest.test0&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="CompositeMetaCheckerTest.test2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3.CompositeMetaCheckerTest.test2&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="TextMetaCheckerV3Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3.TextMetaCheckerV3Test&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="UpdateMetaCheckerV3Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3.UpdateMetaCheckerV3Test&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.CompositeMetaCheckerTest.test0" />
-        <item itemvalue="Gradle.CompositeMetaCheckerTest" />
-        <item itemvalue="Gradle.CompositeMetaCheckerTest.test2" />
-        <item itemvalue="Gradle.UpdateMetaCheckerV3Test" />
-        <item itemvalue="Gradle.TextMetaCheckerV3Test" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="2c8a247a-e37a-49f4-b7e0-17643cfa4af0" name="Changes" comment="" />
-      <created>1649156515289</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1649156515289</updated>
-      <workItem from="1649156531590" duration="7260000" />
-      <workItem from="1649242458539" duration="5923000" />
-    </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
