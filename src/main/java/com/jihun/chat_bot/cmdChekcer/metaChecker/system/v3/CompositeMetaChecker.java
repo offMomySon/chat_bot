@@ -120,7 +120,7 @@ public class CompositeMetaChecker implements MetaCheckerV3 {
             return this;
         }
 
-        public MetaCheckerV3 build() {
+        public CompositeMetaChecker build() {
             return new CompositeMetaChecker(metaCheckerV3s);
         }
     }
