@@ -47,6 +47,12 @@ public abstract class ChainMetaCheckerV3 implements MetaCheckerV3 {
         if (Objects.isNull(meta)) {
             throw new RuntimeException("meta 가 null 입니다.");
         }
+        if (meta.isEmpty()) {
+            throw new RuntimeException("meta 가 empty 입니다.");
+        }
+        if (meta.isBlank()) {
+            throw new RuntimeException("meta 가 blank 입니다.");
+        }
         return meta;
     }
 
