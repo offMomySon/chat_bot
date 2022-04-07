@@ -15,17 +15,7 @@ public class ExitMetaCheckerTest extends CommonMetaCheckerTest {
     }
 
     @Override
-    protected Collection<String> getPartialAndAllMatchMetas() {
-        return List.of("e");
-    }
-
-    @Override
-    protected Collection<String> getPartialMatchMetas() {
-        return List.of("ea", "eait");
-    }
-
-    @Override
     protected Collection<String> getNonMatchMetas() {
-        return List.of("a", "aait");
+        return List.of("a", "aait", "ea", "eait");
     }
 }

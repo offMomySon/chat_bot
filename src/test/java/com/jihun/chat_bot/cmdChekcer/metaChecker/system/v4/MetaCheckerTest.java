@@ -20,17 +20,7 @@ public class MetaCheckerTest extends CommonMetaCheckerTest{
     }
 
     @Override
-    protected Collection<String> getPartialAndAllMatchMetas() {
-        return List.of("test", "meta");
-    }
-
-    @Override
-    protected Collection<String> getPartialMatchMetas() {
-        return List.of("tt", "mm");
-    }
-
-    @Override
     protected Collection<String> getNonMatchMetas() {
-        return List.of("b", "ba", "banner");
+        return List.of("b", "ba", "banner", "tt", "mm");
     }
 }

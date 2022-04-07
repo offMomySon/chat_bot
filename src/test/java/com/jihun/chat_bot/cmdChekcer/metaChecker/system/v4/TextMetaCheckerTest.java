@@ -18,16 +18,6 @@ public class TextMetaCheckerTest extends CommonMetaCheckerTest {
     }
 
     @Override
-    protected Collection<String> getPartialAndAllMatchMetas() {
-        return DOES_NOT_EXIST_CASED_METAS;
-    }
-
-    @Override
-    protected Collection<String> getPartialMatchMetas() {
-        return DOES_NOT_EXIST_CASED_METAS;
-    }
-
-    @Override
     protected Collection<String> getNonMatchMetas() {
         return DOES_NOT_EXIST_CASED_METAS;
     }

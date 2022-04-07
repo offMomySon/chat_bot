@@ -15,17 +15,7 @@ public class UpdateMetaCheckerTest extends CommonMetaCheckerTest {
     }
 
     @Override
-    protected Collection<String> getPartialAndAllMatchMetas() {
-        return List.of("update");
-    }
-
-    @Override
-    protected Collection<String> getPartialMatchMetas() {
-        return List.of("up");
-    }
-
-    @Override
     protected Collection<String> getNonMatchMetas() {
-        return List.of("a", "apdate");
+        return List.of("a", "apdate", "up");
     }
 }

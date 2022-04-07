@@ -15,17 +15,7 @@ public class BannerMetaCheckerTest extends CommonMetaCheckerTest {
     }
 
     @Override
-    protected Collection<String> getPartialAndAllMatchMetas() {
-        return List.of("banner");
-    }
-
-    @Override
-    protected Collection<String> getPartialMatchMetas() {
-        return List.of("bb", "brnner");
-    }
-
-    @Override
     protected Collection<String> getNonMatchMetas() {
-        return List.of("dd", "d", "danners");
+        return List.of("dd", "d", "danners", "bb", "brnner");
     }
 }

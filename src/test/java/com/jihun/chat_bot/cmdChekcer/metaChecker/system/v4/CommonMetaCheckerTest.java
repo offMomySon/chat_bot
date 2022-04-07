@@ -29,48 +29,10 @@ public abstract class CommonMetaCheckerTest {
         MetaChecker metaChecker = getMetaChecker();
 
         // when
-        MetaResult actual = metaChecker.valid(meta);
+        MetaCheckResult actual = metaChecker.check(meta);
 
         // then
-        assertThat(actual).isSameAs(MetaResult.ALL_MATCHED);
-    }
-
-    @DisplayName("부분적으로 일치하거나 전부 일치하면 전부 일치한 결과로 검사합니다.")
-    @ParameterizedTest
-    @MethodSource("providePartialAndAllMatchMetas")
-    void testIsValidBannerMetaWhenGivenBannerMetaIsBothMatchedPartialAndAll(Meta meta) {
-        if (isTestSkip(meta)) {
-            assertThat(meta).isEqualTo(SKIP);
-            return;
-        }
-
-        // given
-        MetaChecker metaChecker = getMetaChecker();
-
-        // when
-        MetaResult actual = metaChecker.valid(meta);
-
-        // then
-        assertThat(actual).isSameAs(MetaResult.ALL_MATCHED);
-    }
-
-    @DisplayName("부분적으로 올바른 배너 메타의 유효성검사를 진행합니다.")
-    @ParameterizedTest
-    @MethodSource("providePartialMatchMetas")
-    void testIsPartialValidBannerMetaWhenGivenInvalidBannerMeta(Meta meta) {
-        if (isTestSkip(meta)) {
-            assertThat(meta).isEqualTo(SKIP);
-            return;
-        }
-
-        // given
-        MetaChecker metaChecker = getMetaChecker();
-
-        // when
-        MetaResult actual = metaChecker.valid(meta);
-
-        // then
-        assertThat(actual).isSameAs(MetaResult.PARTIAL_MATCHED);
+        assertThat(actual.isValid()).isTrue();
     }
 
     @DisplayName("올바르지 않은 배너 메타의 유효성검사를 진행합니다.")
@@ -86,22 +48,14 @@ public abstract class CommonMetaCheckerTest {
         MetaChecker metaChecker = getMetaChecker();
 
         // when
-        MetaResult actual = metaChecker.valid(meta);
+        MetaCheckResult actual = metaChecker.check(meta);
 
         // then
-        assertThat(actual).isSameAs(MetaResult.NONE_MATCHED);
+        assertThat(actual.isInvalid()).isTrue();
     }
 
     private Stream<Arguments> provideAllMatchMetas() {
         return provideMeta(getAllMatchMetas());
-    }
-
-    private Stream<Arguments> providePartialAndAllMatchMetas() {
-        return provideMeta(getPartialAndAllMatchMetas());
-    }
-
-    private Stream<Arguments> providePartialMatchMetas() {
-        return provideMeta(getPartialMatchMetas());
     }
 
     private Stream<Arguments> provideNoneMatchMetas() {
@@ -122,7 +76,5 @@ public abstract class CommonMetaCheckerTest {
 
     protected abstract MetaChecker getMetaChecker();
     protected abstract Collection<String> getAllMatchMetas();
-    protected abstract Collection<String> getPartialAndAllMatchMetas();
-    protected abstract Collection<String> getPartialMatchMetas();
     protected abstract Collection<String> getNonMatchMetas();
 }

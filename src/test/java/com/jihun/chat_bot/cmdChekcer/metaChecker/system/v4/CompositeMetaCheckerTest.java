@@ -30,26 +30,13 @@ public class CompositeMetaCheckerTest extends CommonMetaCheckerTest {
     }
 
     @Override
-    protected Collection<String> getPartialAndAllMatchMetas() {
+    protected Collection<String> getNonMatchMetas() {
         return List.of(
-                randomPick(BANNER_METAS).substring(0, 1),
-                randomPick(EXIT_METAS).substring(0, 1),
-                randomPick(TEST_METAS).substring(0, 1)
-        );
-    }
-
-    @Override
-    protected Collection<String> getPartialMatchMetas() {
-        return List.of(
+                "NONE1", "NONE2",
                 randomPick(BANNER_METAS).charAt(0) + "_random",
                 randomPick(EXIT_METAS).charAt(0) + "_random",
                 randomPick(TEST_METAS).charAt(0) + "_random"
-        );
-    }
-
-    @Override
-    protected Collection<String> getNonMatchMetas() {
-        return List.of("NONE1", "NONE2");
+                );
     }
 
     @SafeVarargs

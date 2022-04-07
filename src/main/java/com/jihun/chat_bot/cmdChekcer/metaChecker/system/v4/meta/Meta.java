@@ -47,6 +47,10 @@ public class Meta {
                 .anyMatch(values::contains);
     }
 
+    public boolean doesNotContain(Meta givenMeta) {
+        return !contain(givenMeta);
+    }
+
     public List<String> getValues() {
         return values.stream()
                 .collect(Collectors.toUnmodifiableList());

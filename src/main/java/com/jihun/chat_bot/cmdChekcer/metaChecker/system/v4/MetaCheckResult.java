@@ -71,7 +71,7 @@ public class MetaCheckResult {
         return this.invalidMetaValues.isEmpty();
     }
 
-    private boolean isInvalid() {
+    public boolean isInvalid() {
         return !isValid();
     }
 

@@ -15,17 +15,7 @@ public class FileMetaCheckerTest extends CommonMetaCheckerTest {
     }
 
     @Override
-    protected Collection<String> getPartialAndAllMatchMetas() {
-        return List.of("f");
-    }
-
-    @Override
-    protected Collection<String> getPartialMatchMetas() {
-        return List.of("fi");
-    }
-
-    @Override
     protected Collection<String> getNonMatchMetas() {
-        return List.of("a", "aile");
+        return List.of("a", "aile", "fi");
     }
 }
