@@ -6,16 +6,16 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class BannerCheckerTest {
+public class BannerMetaCheckerTest {
     @DisplayName("올바른 배너 메타의 유효성검사를 진행합니다.")
     @ParameterizedTest
     @ValueSource(strings = {"b", "banner"})
     void testIsValidBannerMetaWhenGivenValidBannerMeta(String meta) {
         // given
-        BannerChecker bannerChecker = new BannerChecker();
+        BannerMetaChecker bannerMetaChecker = new BannerMetaChecker();
 
         // when
-        MetaResult actual = bannerChecker.valid(meta);
+        MetaResult actual = bannerMetaChecker.valid(meta);
 
         // then
         assertThat(actual).isSameAs(MetaResult.ALL_MATCHED);
@@ -26,10 +26,10 @@ public class BannerCheckerTest {
     @ValueSource(strings = {"banner"})
     void testIsValidBannerMetaWhenGivenBannerMetaIsBothMatchedPartialAndAll(String meta) {
         // given
-        BannerChecker bannerChecker = new BannerChecker();
+        BannerMetaChecker bannerMetaChecker = new BannerMetaChecker();
 
         // when
-        MetaResult actual = bannerChecker.valid(meta);
+        MetaResult actual = bannerMetaChecker.valid(meta);
 
         // then
         assertThat(actual).isSameAs(MetaResult.ALL_MATCHED);
@@ -41,10 +41,10 @@ public class BannerCheckerTest {
     @ValueSource(strings = {"dd", "d", "danners"})
     void testIsInvalidBannerMetaWhenGivenInvalidBannerMeta(String meta) {
         // given
-        BannerChecker bannerChecker = new BannerChecker();
+        BannerMetaChecker bannerMetaChecker = new BannerMetaChecker();
 
         // when
-        MetaResult actual = bannerChecker.valid(meta);
+        MetaResult actual = bannerMetaChecker.valid(meta);
 
         // then
         assertThat(actual).isSameAs(MetaResult.NONE_MATCHED);
@@ -55,10 +55,10 @@ public class BannerCheckerTest {
     @ValueSource(strings = {"bb", "brnner"})
     void testIsPartialValidBannerMetaWhenGivenInvalidBannerMeta(String meta) {
         // given
-        BannerChecker bannerChecker = new BannerChecker();
+        BannerMetaChecker bannerMetaChecker = new BannerMetaChecker();
 
         // when
-        MetaResult actual = bannerChecker.valid(meta);
+        MetaResult actual = bannerMetaChecker.valid(meta);
 
         // then
         assertThat(actual).isSameAs(MetaResult.PARTIAL_MATCHED);
