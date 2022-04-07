@@ -13,7 +13,7 @@ public class CompositeMetaCheckerTest extends CommonMetaCheckerTest {
 
     private static final List<String> ALL_METAS = flatValues(BANNER_METAS, EXIT_METAS, TEST_METAS);
 
-    private final List<AbstractMetaChecker> META_CHECKERS = List.of(
+    private final List<MetaChecker> META_CHECKERS = List.of(
             TestMetaChecker.from(BANNER_METAS),
             TestMetaChecker.from(EXIT_METAS),
             TestMetaChecker.from(TEST_METAS)

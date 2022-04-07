@@ -2,7 +2,7 @@ package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4;
 
 import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta.Meta;
 
-public class BannerMetaChecker extends AbstractMetaChecker {
+public class BannerMetaChecker extends MetaChecker {
     private static final Meta META = Meta.from("b", "banner");
 
     @Override

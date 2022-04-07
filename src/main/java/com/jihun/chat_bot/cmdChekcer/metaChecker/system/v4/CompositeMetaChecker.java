@@ -8,18 +8,18 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class CompositeMetaChecker extends AbstractMetaChecker {
+public class CompositeMetaChecker extends MetaChecker {
     private final Meta meta;
 
     private CompositeMetaChecker(@NonNull Meta meta) {
         this.meta = meta;
     }
 
-    public static CompositeMetaChecker of(List<AbstractMetaChecker> metaCheckers) {
+    public static CompositeMetaChecker of(List<MetaChecker> metaCheckers) {
         return new CompositeMetaChecker(
                 validate(metaCheckers)
                         .stream()
-                        .map(AbstractMetaChecker::getMeta)
+                        .map(MetaChecker::getMeta)
                         .reduce(Meta::combine)
                         .orElseThrow()
         );
