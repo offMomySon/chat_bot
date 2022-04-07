@@ -1,21 +1,18 @@
 package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4;
 
-import lombok.NonNull;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta.Meta;
+import org.jetbrains.annotations.NotNull;
 
 public class TextMetaChecker extends MetaChecker {
-    private static final List<String> ANY_METAS = Collections.emptyList();
+    private static final Meta META = Meta.empty();
 
     @Override
-    public MetaResult valid(@NonNull String meta) {
+    public MetaResult valid(@NotNull Meta meta) {
         return MetaResult.ALL_MATCHED;
     }
 
     @Override
-    protected Collection<String> getMetas() {
-        return ANY_METAS;
+    protected Meta getMeta() {
+        return META;
     }
 }

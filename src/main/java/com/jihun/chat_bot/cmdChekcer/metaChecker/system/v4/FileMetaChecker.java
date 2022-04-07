@@ -1,11 +1,15 @@
 package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4;
 
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta.Meta;
+
 import java.util.Collection;
 import java.util.List;
 
 public class FileMetaChecker extends MetaChecker {
+    private static final Meta META = Meta.from("f", "file");
+
     @Override
-    protected Collection<String> getMetas() {
-        return List.of("f", "file");
+    protected Meta getMeta() {
+        return META;
     }
 }

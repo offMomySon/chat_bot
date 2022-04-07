@@ -1,28 +1,31 @@
 package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4;
 
-import java.util.Collection;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta.Meta;
+import lombok.NonNull;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class CompositeMetaChecker extends MetaChecker {
-    private final List<String> metas;
+    private final Meta meta;
 
-    private CompositeMetaChecker(List<String> metas) {
-        this.metas = validate(metas);
+    private CompositeMetaChecker(@NonNull Meta meta) {
+        this.meta = meta;
     }
 
     public static CompositeMetaChecker of(List<MetaChecker> metaCheckers) {
         return new CompositeMetaChecker(
-                validate(metaCheckers).stream()
-                .map(MetaChecker::getMetas)
-                .flatMap(Collection::stream)
-                .collect(Collectors.toUnmodifiableList())
+                validate(metaCheckers)
+                        .stream()
+                        .map(MetaChecker::getMeta)
+                        .reduce(Meta::combine)
+                        .orElseThrow()
         );
     }
 
-    private static <T>List<T> validate(List<T> metaCheckers) {
+    private static <T> List<T> validate(List<T> metaCheckers) {
         if (Objects.isNull(metaCheckers)) {
             return Collections.emptyList();
         }
@@ -33,7 +36,7 @@ public class CompositeMetaChecker extends MetaChecker {
     }
 
     @Override
-    protected Collection<String> getMetas() {
-        return metas;
+    protected Meta getMeta() {
+        return meta;
     }
 }

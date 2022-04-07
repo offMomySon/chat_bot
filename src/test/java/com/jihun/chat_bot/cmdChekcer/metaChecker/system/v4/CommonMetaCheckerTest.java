@@ -1,5 +1,6 @@
 package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4;
 
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta.Meta;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,12 +15,12 @@ import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 
 @TestInstance(PER_CLASS)
 public abstract class CommonMetaCheckerTest {
-    private static final String SKIP = CommonMetaCheckerTest.class.getName();
+    private static final Meta SKIP = Meta.empty();
 
     @DisplayName("올바른 배너 메타의 유효성검사를 진행합니다.")
     @ParameterizedTest
     @MethodSource("provideAllMatchMetas")
-    void testIsValidBannerMetaWhenGivenValidBannerMeta(String meta) {
+    void testIsValidBannerMetaWhenGivenValidBannerMeta(Meta meta) {
         if (isTestSkip(meta)) {
             assertThat(meta).isEqualTo(SKIP);
             return;
@@ -37,7 +38,7 @@ public abstract class CommonMetaCheckerTest {
     @DisplayName("부분적으로 일치하거나 전부 일치하면 전부 일치한 결과로 검사합니다.")
     @ParameterizedTest
     @MethodSource("providePartialAndAllMatchMetas")
-    void testIsValidBannerMetaWhenGivenBannerMetaIsBothMatchedPartialAndAll(String meta) {
+    void testIsValidBannerMetaWhenGivenBannerMetaIsBothMatchedPartialAndAll(Meta meta) {
         if (isTestSkip(meta)) {
             assertThat(meta).isEqualTo(SKIP);
             return;
@@ -56,7 +57,7 @@ public abstract class CommonMetaCheckerTest {
     @DisplayName("부분적으로 올바른 배너 메타의 유효성검사를 진행합니다.")
     @ParameterizedTest
     @MethodSource("providePartialMatchMetas")
-    void testIsPartialValidBannerMetaWhenGivenInvalidBannerMeta(String meta) {
+    void testIsPartialValidBannerMetaWhenGivenInvalidBannerMeta(Meta meta) {
         if (isTestSkip(meta)) {
             assertThat(meta).isEqualTo(SKIP);
             return;
@@ -75,7 +76,7 @@ public abstract class CommonMetaCheckerTest {
     @DisplayName("올바르지 않은 배너 메타의 유효성검사를 진행합니다.")
     @ParameterizedTest
     @MethodSource("provideNoneMatchMetas")
-    void testIsInvalidBannerMetaWhenGivenInvalidBannerMeta(String meta) {
+    void testIsInvalidBannerMetaWhenGivenInvalidBannerMeta(Meta meta) {
         if (isTestSkip(meta)) {
             assertThat(meta).isEqualTo(SKIP);
             return;
@@ -92,30 +93,30 @@ public abstract class CommonMetaCheckerTest {
     }
 
     private Stream<Arguments> provideAllMatchMetas() {
-        return provideMetas(getAllMatchMetas());
+        return provideMeta(getAllMatchMetas());
     }
 
     private Stream<Arguments> providePartialAndAllMatchMetas() {
-        return provideMetas(getPartialAndAllMatchMetas());
+        return provideMeta(getPartialAndAllMatchMetas());
     }
 
     private Stream<Arguments> providePartialMatchMetas() {
-        return provideMetas(getPartialMatchMetas());
+        return provideMeta(getPartialMatchMetas());
     }
 
     private Stream<Arguments> provideNoneMatchMetas() {
-        return provideMetas(getNonMatchMetas());
+        return provideMeta(getNonMatchMetas());
     }
 
-    private static Stream<Arguments> provideMetas(Collection<String> metas) {
+    private static Stream<Arguments> provideMeta(Collection<String> metas) {
         if (metas.isEmpty()) {
             return Stream.of(Arguments.of(SKIP));
         }
 
-        return metas.stream().map(Arguments::of);
+        return metas.stream().map(Meta::from).map(Arguments::of);
     }
 
-    private static boolean isTestSkip(String meta) {
+    private static boolean isTestSkip(Meta meta) {
         return meta == SKIP;
     }
 

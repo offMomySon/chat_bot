@@ -1,13 +1,12 @@
 package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4;
 
-import java.util.Collection;
-import java.util.List;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta.Meta;
 
 public class UpdateMetaChecker extends MetaChecker {
-    private static final List<String> METAS = List.of("update", "u");
+    private static final Meta META = Meta.from("update", "u");
 
     @Override
-    protected Collection<String> getMetas() {
-        return METAS;
+    protected Meta getMeta() {
+        return META;
     }
 }

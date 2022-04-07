@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Meta {
+    private static final Meta EMPTY = Meta.from();
+
     private final Set<String> values;
 
     private Meta(Set<String> values) {
@@ -29,6 +31,10 @@ public class Meta {
                 Stream.of(values)
                 .collect(Collectors.toCollection(LinkedHashSet::new))
         );
+    }
+
+    public static Meta empty() {
+        return EMPTY;
     }
 
     public boolean contain(Meta givenMeta) {
@@ -60,5 +66,12 @@ public class Meta {
     @Override
     public int hashCode() {
         return Objects.hash(values);
+    }
+
+    @Override
+    public String toString() {
+        return "Meta{" +
+                "values=" + values +
+                '}';
     }
 }

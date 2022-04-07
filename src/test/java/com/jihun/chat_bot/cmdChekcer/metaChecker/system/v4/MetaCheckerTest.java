@@ -11,7 +11,7 @@ public class MetaCheckerTest extends CommonMetaCheckerTest{
 
     @Override
     protected MetaChecker getMetaChecker() {
-        return new TestMetaChecker(TEST_METAS);
+        return TestMetaChecker.from(TEST_METAS);
     }
 
     @Override

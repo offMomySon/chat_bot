@@ -1,14 +1,12 @@
 package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4;
 
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta.Meta;
 import lombok.NonNull;
-
-import java.util.Collection;
-import java.util.Objects;
 
 public abstract class MetaChecker {
     private static final int PARTIAL_MATCHED_LENGTH = 1;
 
-    public MetaResult valid(@NonNull String meta) {
+    public MetaResult valid(@NonNull Meta meta) {
         if (allMatched(meta)) {
             return MetaResult.ALL_MATCHED;
         }
@@ -20,20 +18,31 @@ public abstract class MetaChecker {
         return MetaResult.NONE_MATCHED;
     }
 
-    private boolean allMatched(String givenMeta) {
-        return getMetas().stream()
-                .anyMatch(bannerMeta -> Objects.equals(bannerMeta, givenMeta));
+    private boolean allMatched(Meta meta) {
+        return getMeta().contain(meta);
     }
 
-    private boolean partialMatched(String givenMeta) {
-        return getMetas().stream()
+    private boolean partialMatched(Meta givenMeta) {
+        return getMeta()
+                .getValues()
+                .stream()
                 .anyMatch(bannerMeta -> isPartialMatched(bannerMeta, givenMeta));
     }
 
-    private static boolean isPartialMatched(String bannerMeta, String givenMeta) {
+    private static boolean isPartialMatched(String bannerMeta, Meta givenMeta) {
+        for (String metaValue: givenMeta.getValues()) {
+            if (isPartialMatched(bannerMeta, metaValue)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private static boolean isPartialMatched(String bannerMeta, String givenMetaValue) {
         for (int i = 0; i < PARTIAL_MATCHED_LENGTH; i++) {
             char bannerMetaChar = bannerMeta.charAt(i);
-            char givenMetaChar = givenMeta.charAt(i);
+            char givenMetaChar = givenMetaValue.charAt(i);
 
             if (bannerMetaChar != givenMetaChar) {
                 return false;
@@ -43,5 +52,5 @@ public abstract class MetaChecker {
         return true;
     }
 
-    protected abstract Collection<String> getMetas();
+    protected abstract Meta getMeta();
 }
