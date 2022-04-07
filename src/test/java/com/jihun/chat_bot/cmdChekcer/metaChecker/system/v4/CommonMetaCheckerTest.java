@@ -14,10 +14,16 @@ import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 
 @TestInstance(PER_CLASS)
 public abstract class CommonMetaCheckerTest {
+    private static final String SKIP = CommonMetaCheckerTest.class.getName();
+
     @DisplayName("올바른 배너 메타의 유효성검사를 진행합니다.")
     @ParameterizedTest
     @MethodSource("provideAllMatchMetas")
     void testIsValidBannerMetaWhenGivenValidBannerMeta(String meta) {
+        if (isTestSkip(meta)) {
+            assertThat(meta).isEqualTo(SKIP);
+            return;
+        }
         // given
         MetaChecker metaChecker = getMetaChecker();
 
@@ -32,6 +38,11 @@ public abstract class CommonMetaCheckerTest {
     @ParameterizedTest
     @MethodSource("providePartialAndAllMatchMetas")
     void testIsValidBannerMetaWhenGivenBannerMetaIsBothMatchedPartialAndAll(String meta) {
+        if (isTestSkip(meta)) {
+            assertThat(meta).isEqualTo(SKIP);
+            return;
+        }
+
         // given
         MetaChecker metaChecker = getMetaChecker();
 
@@ -46,6 +57,11 @@ public abstract class CommonMetaCheckerTest {
     @ParameterizedTest
     @MethodSource("providePartialMatchMetas")
     void testIsPartialValidBannerMetaWhenGivenInvalidBannerMeta(String meta) {
+        if (isTestSkip(meta)) {
+            assertThat(meta).isEqualTo(SKIP);
+            return;
+        }
+
         // given
         MetaChecker metaChecker = getMetaChecker();
 
@@ -60,6 +76,11 @@ public abstract class CommonMetaCheckerTest {
     @ParameterizedTest
     @MethodSource("provideNoneMatchMetas")
     void testIsInvalidBannerMetaWhenGivenInvalidBannerMeta(String meta) {
+        if (isTestSkip(meta)) {
+            assertThat(meta).isEqualTo(SKIP);
+            return;
+        }
+
         // given
         MetaChecker metaChecker = getMetaChecker();
 
@@ -71,19 +92,31 @@ public abstract class CommonMetaCheckerTest {
     }
 
     private Stream<Arguments> provideAllMatchMetas() {
-        return getAllMatchMetas().stream().map(Arguments::of);
+        return provideMetas(getAllMatchMetas());
     }
 
     private Stream<Arguments> providePartialAndAllMatchMetas() {
-        return getPartialAndAllMatchMetas().stream().map(Arguments::of);
+        return provideMetas(getPartialAndAllMatchMetas());
     }
 
     private Stream<Arguments> providePartialMatchMetas() {
-        return getPartialMatchMetas().stream().map(Arguments::of);
+        return provideMetas(getPartialMatchMetas());
     }
 
     private Stream<Arguments> provideNoneMatchMetas() {
-        return getNonMatchMetas().stream().map(Arguments::of);
+        return provideMetas(getNonMatchMetas());
+    }
+
+    private static Stream<Arguments> provideMetas(Collection<String> metas) {
+        if (metas.isEmpty()) {
+            return Stream.of(Arguments.of(SKIP));
+        }
+
+        return metas.stream().map(Arguments::of);
+    }
+
+    private static boolean isTestSkip(String meta) {
+        return meta == SKIP;
     }
 
     protected abstract MetaChecker getMetaChecker();
