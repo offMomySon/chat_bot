@@ -1,21 +1,14 @@
 package com.jihun.chat_bot.checker.cmd;
 
-import com.jihun.chat_bot.message.CmdErrorMessage;
-
-public class FileCmdChecker implements CmdErrorChecker {
+public class FileCmdChecker extends BasicCmdChecker {
     private static final String possibleCmd = "file";
 
-    @Override
-    public String createErrorMessage(String cmd) {
-        if (!isNotSupport(cmd)) {
-            throw new RuntimeException("가능한 명령어 입니다.");
-        }
-
-        return new CmdErrorMessage(cmd).create();
+    public FileCmdChecker(String cmd) {
+        super(cmd);
     }
 
     @Override
-    public Boolean isNotSupport(String cmd) {
+    public boolean isNotSupport() {
         return !possibleCmd.equalsIgnoreCase(cmd);
     }
 }
