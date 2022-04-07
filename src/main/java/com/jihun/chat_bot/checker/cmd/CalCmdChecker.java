@@ -1,22 +1,14 @@
 package com.jihun.chat_bot.checker.cmd;
 
-import com.jihun.chat_bot.message.CmdErrorMessage;
-
-public class CalCmdChecker implements CmdErrorChecker {
+public class CalCmdChecker extends BasicCmdChecker {
     private static final String possibleCmd = "cal";
-    
 
-    @Override
-    public String createErrorMessage(String cmd) {
-        if (!isNotSupport(cmd)) {
-            throw new RuntimeException("가능한 명령어 입니다.");
-        }
-
-        return new CmdErrorMessage(cmd).create();
+    public CalCmdChecker(String cmd) {
+        super(cmd);
     }
 
     @Override
-    public Boolean isNotSupport(String cmd) {
+    public boolean isNotSupport() {
         return !possibleCmd.equalsIgnoreCase(cmd);
     }
 }
