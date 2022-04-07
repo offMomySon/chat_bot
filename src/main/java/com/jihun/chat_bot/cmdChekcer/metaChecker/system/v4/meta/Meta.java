@@ -37,6 +37,10 @@ public class Meta {
         return EMPTY;
     }
 
+    public boolean isEmpty() {
+        return values.isEmpty();
+    }
+
     public boolean contain(Meta givenMeta) {
         return givenMeta.values
                 .stream()
