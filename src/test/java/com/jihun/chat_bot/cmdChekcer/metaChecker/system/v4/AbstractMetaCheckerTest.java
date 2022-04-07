@@ -5,7 +5,7 @@ import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.support.TestMetaCheck
 import java.util.Collection;
 import java.util.List;
 
-public class MetaCheckerTest extends CommonMetaCheckerTest{
+public class AbstractMetaCheckerTest extends CommonMetaCheckerTest{
     //Note. 데이터의 순서 변경시 테스트의 의도가 깨질 수 있습니다.
     private static final List<String> TEST_METAS = List.of("t", "test", "m", "meta");
 
