@@ -15,23 +15,52 @@ public class BannerCheckerTest {
         BannerChecker bannerChecker = new BannerChecker();
 
         // when
-        boolean actual = bannerChecker.valid(meta);
+        MetaResult actual = bannerChecker.valid(meta);
 
         // then
-        assertThat(actual).isTrue();
+        assertThat(actual).isSameAs(MetaResult.ALL_MATCHED);
     }
+
+    @DisplayName("부분적으로 일치하거나 전부 일치하면 전부 일치한 결과로 검사합니다.")
+    @ParameterizedTest
+    @ValueSource(strings = {"banner"})
+    void testIsValidBannerMetaWhenGivenBannerMetaIsBothMatchedPartialAndAll(String meta) {
+        // given
+        BannerChecker bannerChecker = new BannerChecker();
+
+        // when
+        MetaResult actual = bannerChecker.valid(meta);
+
+        // then
+        assertThat(actual).isSameAs(MetaResult.ALL_MATCHED);
+    }
+
 
     @DisplayName("올바르지 않은 배너 메타의 유효성검사를 진행합니다.")
     @ParameterizedTest
-    @ValueSource(strings = {"bb", "d", "banners"})
+    @ValueSource(strings = {"dd", "d", "danners"})
     void testIsInvalidBannerMetaWhenGivenInvalidBannerMeta(String meta) {
         // given
         BannerChecker bannerChecker = new BannerChecker();
 
         // when
-        boolean actual = bannerChecker.valid(meta);
+        MetaResult actual = bannerChecker.valid(meta);
 
         // then
-        assertThat(actual).isFalse();
+        assertThat(actual).isSameAs(MetaResult.NONE_MATCHED);
+    }
+
+    @DisplayName("부분적으로 올바른 배너 메타의 유효성검사를 진행합니다.")
+    @ParameterizedTest
+    @ValueSource(strings = {"bb", "brnner"})
+    void testIsPartialValidBannerMetaWhenGivenInvalidBannerMeta(String meta) {
+        // given
+        BannerChecker bannerChecker = new BannerChecker();
+
+        // when
+        MetaResult actual = bannerChecker.valid(meta);
+
+        // then
+        assertThat(actual).isSameAs(MetaResult.PARTIAL_MATCHED);
     }
 }
