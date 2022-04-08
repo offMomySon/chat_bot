@@ -1,6 +1,5 @@
-package com.jihun.chat_bot.metaChecker;
+package com.jihun.chat_bot.cmdChekcer.metaChecker;
 
-import com.jihun.chat_bot.cmdChekcer.metaChecker.DateMetaChecker;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;

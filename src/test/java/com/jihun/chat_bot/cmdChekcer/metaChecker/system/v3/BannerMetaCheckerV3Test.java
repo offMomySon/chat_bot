@@ -14,20 +14,20 @@ import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_FAIL
 import static com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType.MATCH_SUCCESS;
 import static com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3.ChainMetaCheckerV3.EMPTY;
 
-class UpdateMetaCheckerV3Test {
+class BannerMetaCheckerV3Test {
+
     @DisplayName("체크하는 meta 와 일치하면 MATCH_SUCCESS 를 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
-        "update",
-        "u"
+        "banner",
+        "b"
     })
     void test1(String meta) {
         //given
-        UpdateMetaCheckerV3 updateMetaCheckerV3 = new UpdateMetaCheckerV3(meta, EMPTY);
-
+        BannerMetaCheckerV3 bannerMetaChecker = new BannerMetaCheckerV3(meta, EMPTY);
 
         //when
-        MetaCheckType actual = updateMetaCheckerV3.check();
+        MetaCheckType actual = bannerMetaChecker.check();
 
         //then
         Assertions.assertThat(actual)
@@ -37,16 +37,15 @@ class UpdateMetaCheckerV3Test {
     @DisplayName("체크하는 meta 와 첫글자가 일치하면 MATCH_FAIL_PARTLY_MATCHED 를 반환합니다.")
     @ParameterizedTest
     @ValueSource(strings = {
-        "uPartly",
-        "updatePartly",
-        "uTest"
+        "bPartly",
+        "bannerPartly"
     })
     void test2(String meta) {
         //given
-        UpdateMetaCheckerV3 updateMetaCheckerV3 = new UpdateMetaCheckerV3(meta, EMPTY);
+        BannerMetaCheckerV3 bannerMetaCheckerV3 = new BannerMetaCheckerV3(meta, EMPTY);
 
         //when
-        MetaCheckType actual = updateMetaCheckerV3.check();
+        MetaCheckType actual = bannerMetaCheckerV3.check();
 
         //then
         Assertions.assertThat(actual)
@@ -57,14 +56,14 @@ class UpdateMetaCheckerV3Test {
     @ParameterizedTest
     @ValueSource(strings = {
         "notMatch",
-        "matchFailTotally"
+        "nevereverNotMatch"
     })
     void test3(String meta) {
         //given
-        UpdateMetaCheckerV3 updateMetaCheckerV3 = new UpdateMetaCheckerV3(meta, EMPTY);
+        BannerMetaCheckerV3 bannerMetaCheckerV3 = new BannerMetaCheckerV3(meta, EMPTY);
 
         //when
-        MetaCheckType actual = updateMetaCheckerV3.check();
+        MetaCheckType actual = bannerMetaCheckerV3.check();
 
         //then
         Assertions.assertThat(actual)
@@ -75,10 +74,10 @@ class UpdateMetaCheckerV3Test {
     @Test
     void test4() {
         //given
-        UpdateMetaCheckerV3 updateMetaCheckerV3 = new UpdateMetaCheckerV3("file", EMPTY);
+        BannerMetaCheckerV3 bannerMetaChecker = new BannerMetaCheckerV3("banner", EMPTY);
 
         //when
-        Set<String> actual = updateMetaCheckerV3.getCheckMetas();
+        Set<String> actual = bannerMetaChecker.getCheckMetas();
 
         //then
         Assertions.assertThat(actual)
@@ -94,10 +93,11 @@ class UpdateMetaCheckerV3Test {
     void test5(String meta) {
         //given
         //when
-        Throwable actual = Assertions.catchThrowable(() -> new UpdateMetaCheckerV3(meta, EMPTY));
+        Throwable actual = Assertions.catchThrowable(() -> new BannerMetaCheckerV3(meta, EMPTY));
 
         //then
         Assertions.assertThat(actual)
             .isNotNull();
     }
+
 }

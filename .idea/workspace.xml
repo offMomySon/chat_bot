@@ -4,59 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2be1d137-6917-4b51-aea6-d1fa425ce048" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/saveactions_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/BannerMetaCheckerV3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/BannerMetaCheckerV3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/ChainMetaCheckerV3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/ChainMetaCheckerV3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/CompositeMetaChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/CompositeMetaChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/ExitMetaCheckerV3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/ExitMetaCheckerV3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/FileMetaCheckerV3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/FileMetaCheckerV3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/MetaCheckerV3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/MetaCheckerV3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/TextMetaCheckerV3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/TextMetaCheckerV3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/UpdateMetaCheckerV3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/UpdateMetaCheckerV3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/UpdateMetaCheckerV3Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v3/UpdateMetaCheckerV3Test.java" afterDir="false" />
+    <list default="true" id="2c8a247a-e37a-49f4-b7e0-17643cfa4af0" name="Changes" comment="feat: 메타 체크 메시지 객체 구현">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/strategy/ChanningMetaChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/strategy/ChanningMetaCheckerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/ExcludeMetaChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/SkippableMetaChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/ExcludeMetaCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/SkippableMetaCheckerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
-  </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="chat_bot" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
       </state>
     </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -66,33 +47,61 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1649079921" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/v3_chaining" />
+                    <option name="lastUsedInstant" value="1649079920" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="27KTCOsMQeIHwA1O7D9qE5J3JeB" />
+  <component name="ProjectId" id="27NNJv6zBQMJpbjmy2yR5OtjvDO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4" />
     <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.saveactions" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.strategy" />
+      <recent name="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4" />
+      <recent name="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -100,132 +109,308 @@
       <recent name="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.UpdateMetaCheckerV3Test">
-    <configuration name="UpdateMetaCheckerV3Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3.UpdateMetaCheckerV3Test&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="UpdateMetaCheckerV3Test.test1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3.UpdateMetaCheckerV3Test.test1&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="UpdateMetaCheckerV3Test.test2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3.UpdateMetaCheckerV3Test.test2&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="chat_bot_ [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="dependencies" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ChainMetaCheckerV3Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="test" />
+  <component name="RunManager" selected="JUnit.com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4 in chat_bot.test">
+    <configuration name="ChanningMetaCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chat_bot.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3.*" />
+          <option name="PATTERN" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.strategy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3" />
-      <option name="MAIN_CLASS_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3.ChainMetaCheckerV3Test" />
+      <option name="PACKAGE_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.strategy" />
+      <option name="MAIN_CLASS_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.strategy.ChanningMetaCheckerTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MetaCheckErrorMessageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chat_bot.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.result.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.result" />
+      <option name="MAIN_CLASS_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.result.MetaCheckErrorMessageTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MetaTest.testAnyOneMatchMeta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chat_bot.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta" />
+      <option name="MAIN_CLASS_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta.MetaTest" />
+      <option name="METHOD_NAME" value="testAnyOneMatchMeta(java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SkippableMetaCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chat_bot.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.result.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4" />
+      <option name="MAIN_CLASS_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.SkippableMetaCheckerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4 in chat_bot.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chat_bot.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.result.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.UpdateMetaCheckerV3Test" />
-        <item itemvalue="Gradle.UpdateMetaCheckerV3Test.test2" />
-        <item itemvalue="Gradle.UpdateMetaCheckerV3Test.test1" />
-        <item itemvalue="JUnit.ChainMetaCheckerV3Test" />
-        <item itemvalue="Gradle.chat_bot_ [dependencies]" />
+        <item itemvalue="JUnit.com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4 in chat_bot.test" />
+        <item itemvalue="JUnit.ChanningMetaCheckerTest" />
+        <item itemvalue="JUnit.MetaCheckErrorMessageTest" />
+        <item itemvalue="JUnit.SkippableMetaCheckerTest" />
+        <item itemvalue="JUnit.MetaTest.testAnyOneMatchMeta" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2be1d137-6917-4b51-aea6-d1fa425ce048" name="Changes" comment="" />
-      <created>1649067652073</created>
+      <changelist id="2c8a247a-e37a-49f4-b7e0-17643cfa4af0" name="Changes" comment="" />
+      <created>1649156515289</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1649067652073</updated>
-      <workItem from="1649067653378" duration="3601000" />
+      <updated>1649156515289</updated>
+      <workItem from="1649156531590" duration="7260000" />
+      <workItem from="1649242458539" duration="5923000" />
+      <workItem from="1649355412530" duration="25760000" />
     </task>
+    <task id="LOCAL-00001" summary="feature: 메타배너 정보를 검사하는 배너체커 모듈 작성">
+      <created>1649356019106</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1649356019106</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feature: 배너 메타에 부분일치 개념 추가">
+      <created>1649357559487</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649357559487</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feature: 메타 배너의 기능을 공통 메타 기능으로 이관">
+      <created>1649358313747</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649358313747</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactor: 배너체커에 공통 메타체커 적용 작업 수행">
+      <created>1649358426906</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649358426906</updated>
+    </task>
+    <task id="LOCAL-00005" summary="test: 메타체커 공통 테스트 작업 수행">
+      <created>1649359459044</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1649359459044</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactor: 공통 메타 테스트 적용">
+      <created>1649359477215</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649359477215</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: 종료메타 체커 구현">
+      <created>1649359660755</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1649359660755</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: 파일메타 체커 구현">
+      <created>1649359780493</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1649359780493</updated>
+    </task>
+    <task id="LOCAL-00009" summary="test: 특정 테스트 스킵 기능 추가">
+      <created>1649360967586</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1649360967586</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: 텍스트 메타 체커 구현">
+      <created>1649360986703</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1649360986703</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: 업데이트 메타 체커 구현">
+      <created>1649361147204</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1649361147204</updated>
+    </task>
+    <task id="LOCAL-00012" summary="test: 테스트 전용 메타 체커 외부로 추출">
+      <created>1649361464103</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1649361464103</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: 복합 메타 체커 구현">
+      <created>1649362299139</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1649362299139</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: 문자열 메타 래퍼 객체 구현">
+      <created>1649364728764</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1649364728764</updated>
+    </task>
+    <task id="LOCAL-00015" summary="refactor: 메타 체커들의 내부 값들을 Meta 값 객체로 변경">
+      <created>1649366003707</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1649366003707</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: 메타 체크 결과 값 객체 구현">
+      <created>1649366827363</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1649366827363</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: 메타 체크 메시지 객체 구현">
+      <created>1649368961726</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1649368961726</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: 메타 체크 메시지 객체 구현">
+      <created>1649369418876</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1649369418876</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat: 메타 체크 결과 객체 구현">
+      <created>1649369689031</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1649369689031</updated>
+    </task>
+    <task id="LOCAL-00020" summary="refactor: 메타 체크 결과 객체로 적용">
+      <created>1649370012917</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1649370012917</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: 메타값 제공 객체 구현">
+      <created>1649371826877</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1649371826877</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat: MetaChecker 인터페이스와 중간 구현체 구현 및 적용">
+      <created>1649373058722</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1649373058722</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat: MetaChecker 인터페이스 분리 및 적용">
+      <created>1649373169614</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1649373169614</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat: 예외 케이스로 찾는 메타 체커 구현">
+      <created>1649373202043</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1649373202043</updated>
+    </task>
+    <task id="LOCAL-00025" summary="refactor: interface 추출 롤백">
+      <created>1649375149268</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1649375149268</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: 메타 체크 에러 메시지 생성 객체 처리">
+      <created>1649381022662</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1649381022662</updated>
+    </task>
+    <task id="LOCAL-00027" summary="refactor: 메타 체크 결과와 메시지 생성 객체 분리">
+      <created>1649381077998</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1649381077998</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: 어떤 요소던 매치 되는 Meta 기능 구현">
+      <created>1649381201381</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1649381201381</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat: MetaProvider peek 기능 구현">
+      <created>1649381225821</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1649381225821</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +426,34 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactor: 배너체커에 공통 메타체커 적용 작업 수행" />
+    <MESSAGE value="test: 메타체커 공통 테스트 작업 수행" />
+    <MESSAGE value="refactor: 공통 메타 테스트 적용" />
+    <MESSAGE value="feat: 종료메타 체커 구현" />
+    <MESSAGE value="feat: 파일메타 체커 구현" />
+    <MESSAGE value="test: 특정 테스트 스킵 기능 추가" />
+    <MESSAGE value="feat: 텍스트 메타 체커 구현" />
+    <MESSAGE value="feat: 업데이트 메타 체커 구현" />
+    <MESSAGE value="test: 테스트 전용 메타 체커 외부로 추출" />
+    <MESSAGE value="feat: 복합 메타 체커 구현" />
+    <MESSAGE value="feat: 문자열 메타 래퍼 객체 구현" />
+    <MESSAGE value="feat: 메타 체크 결과 값 객체 구현" />
+    <MESSAGE value="feat: 메타 체크 메시지 객체 구현" />
+    <MESSAGE value="refactor: 메타 체커들의 내부 값들을 Meta 값 객체로 변경" />
+    <MESSAGE value="feat: 메타 체크 결과 객체 구현" />
+    <MESSAGE value="refactor: 메타 체크 결과 객체로 적용" />
+    <MESSAGE value="feat: 메타값 제공 객체 구현" />
+    <MESSAGE value="feat: MetaChecker 인터페이스와 중간 구현체 구현 및 적용" />
+    <MESSAGE value="feat: MetaChecker 인터페이스 분리 및 적용" />
+    <MESSAGE value="feat: 예외 케이스로 찾는 메타 체커 구현" />
+    <MESSAGE value="refactor: interface 추출 롤백" />
+    <MESSAGE value="feat: 메타 체크 에러 메시지 생성 객체 처리" />
+    <MESSAGE value="refactor: 메타 체크 결과와 메시지 생성 객체 분리" />
+    <MESSAGE value="feat: 어떤 요소던 매치 되는 Meta 기능 구현" />
+    <MESSAGE value="feat: MetaProvider peek 기능 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: MetaProvider peek 기능 구현" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
