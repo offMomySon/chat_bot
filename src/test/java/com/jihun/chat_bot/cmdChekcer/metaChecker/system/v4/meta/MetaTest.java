@@ -89,4 +89,19 @@ public class MetaTest {
         // then
         assertThat(actual).isEqualTo(expect);
     }
+
+    @DisplayName("모든 케이스에 매치되는 메타를 테스트 합니다.")
+    @ParameterizedTest
+    @ValueSource(strings = {"any", "one", "match"})
+    void testAnyOneMatchMeta(String anyOneMetaValue) {
+        // given
+        Meta givenMeta = Meta.from(anyOneMetaValue);
+        Meta anyOneMatch = Meta.anyOneMatch();
+
+        // when
+        boolean actual = anyOneMatch.contain(givenMeta);
+
+        // then
+        assertThat(actual).isTrue();
+    }
 }

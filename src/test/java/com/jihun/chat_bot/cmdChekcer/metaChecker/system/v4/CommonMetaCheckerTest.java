@@ -1,6 +1,7 @@
 package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4;
 
 import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta.Meta;
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.result.MetaCheckResult;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;

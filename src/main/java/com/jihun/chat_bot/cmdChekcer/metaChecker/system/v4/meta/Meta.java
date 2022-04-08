@@ -4,13 +4,20 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static java.util.Collections.emptyList;
+import static java.util.Collections.emptySet;
+
 public class Meta {
-    private static final Meta EMPTY = Meta.from();
+    private static final Meta EMPTY = Meta.from("empty");
+    private static final boolean NOT_ANY_MATCH = false;
+    public static final boolean ANY_ONE_MATCH = true;
 
     private final Set<String> values;
+    private final boolean anyOneMatch;
 
-    private Meta(Set<String> values) {
+    private Meta(Set<String> values, boolean anyOneMatch) {
         this.values = toLowercaseValues(values);
+        this.anyOneMatch = anyOneMatch;
     }
 
     private static Set<String> toLowercaseValues(Set<String> values) {
@@ -29,7 +36,8 @@ public class Meta {
     public static Meta from(String... values) {
         return new Meta(
                 Stream.of(values)
-                .collect(Collectors.toCollection(LinkedHashSet::new))
+                .collect(Collectors.toCollection(LinkedHashSet::new)),
+                NOT_ANY_MATCH
         );
     }
 
@@ -37,11 +45,23 @@ public class Meta {
         return EMPTY;
     }
 
+    public static Meta anyOneMatch() {
+        return new Meta(emptySet(), ANY_ONE_MATCH);
+    }
+
+    public boolean isAnyOneMatch() {
+        return anyOneMatch;
+    }
+
     public boolean isEmpty() {
-        return values.isEmpty();
+        return this == EMPTY || values.isEmpty();
     }
 
     public boolean contain(Meta givenMeta) {
+        if (anyOneMatch) {
+            return true;
+        }
+
         return givenMeta.values
                 .stream()
                 .anyMatch(values::contains);
@@ -52,6 +72,10 @@ public class Meta {
     }
 
     public List<String> getValues() {
+        if (isEmpty()) {
+            return emptyList();
+        }
+
         return values.stream()
                 .collect(Collectors.toUnmodifiableList());
     }
@@ -60,7 +84,7 @@ public class Meta {
         LinkedHashSet<String> newValues = new LinkedHashSet<>(this.values);
         newValues.addAll(meta.values);
 
-        return new Meta(newValues);
+        return new Meta(newValues, meta.anyOneMatch || anyOneMatch);
     }
 
     @Override
