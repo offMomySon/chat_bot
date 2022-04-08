@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c8a247a-e37a-49f4-b7e0-17643cfa4af0" name="Changes" comment="feat: 메타 체크 메시지 객체 구현">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/result/MetaCheckErrorMessage.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/strategy/ChanningMetaChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/result/MetaCheckErrorMessageTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/strategy/ChanningMetaCheckerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/ExcludeMetaChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/SkippableMetaChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/MetaCheckResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/result/MetaCheckResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/MetaChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/MetaChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/TextMetaChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/TextMetaChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/meta/Meta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/meta/Meta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/meta/MetaProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/meta/MetaProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/CommonMetaCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/CommonMetaCheckerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/ExcludeMetaCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/SkippableMetaCheckerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/MetaCheckResultTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/meta/MetaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/meta/MetaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +205,7 @@
       <updated>1649156515289</updated>
       <workItem from="1649156531590" duration="7260000" />
       <workItem from="1649242458539" duration="5923000" />
-      <workItem from="1649355412530" duration="25446000" />
+      <workItem from="1649355412530" duration="25760000" />
     </task>
     <task id="LOCAL-00001" summary="feature: 메타배너 정보를 검사하는 배너체커 모듈 작성">
       <created>1649356019106</created>
@@ -393,7 +382,35 @@
       <option name="project" value="LOCAL" />
       <updated>1649375149268</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="feat: 메타 체크 에러 메시지 생성 객체 처리">
+      <created>1649381022662</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1649381022662</updated>
+    </task>
+    <task id="LOCAL-00027" summary="refactor: 메타 체크 결과와 메시지 생성 객체 분리">
+      <created>1649381077998</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1649381077998</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: 어떤 요소던 매치 되는 Meta 기능 구현">
+      <created>1649381201381</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1649381201381</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat: MetaProvider peek 기능 구현">
+      <created>1649381225821</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1649381225821</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,9 +428,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 메타배너 정보를 검사하는 배너체커 모듈 작성" />
-    <MESSAGE value="feature: 배너 메타에 부분일치 개념 추가" />
-    <MESSAGE value="feature: 메타 배너의 기능을 공통 메타 기능으로 이관" />
     <MESSAGE value="refactor: 배너체커에 공통 메타체커 적용 작업 수행" />
     <MESSAGE value="test: 메타체커 공통 테스트 작업 수행" />
     <MESSAGE value="refactor: 공통 메타 테스트 적용" />
@@ -435,7 +449,11 @@
     <MESSAGE value="feat: MetaChecker 인터페이스 분리 및 적용" />
     <MESSAGE value="feat: 예외 케이스로 찾는 메타 체커 구현" />
     <MESSAGE value="refactor: interface 추출 롤백" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: interface 추출 롤백" />
+    <MESSAGE value="feat: 메타 체크 에러 메시지 생성 객체 처리" />
+    <MESSAGE value="refactor: 메타 체크 결과와 메시지 생성 객체 분리" />
+    <MESSAGE value="feat: 어떤 요소던 매치 되는 Meta 기능 구현" />
+    <MESSAGE value="feat: MetaProvider peek 기능 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: MetaProvider peek 기능 구현" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
