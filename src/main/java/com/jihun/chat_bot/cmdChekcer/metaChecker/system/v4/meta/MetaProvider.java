@@ -45,9 +45,25 @@ public class MetaProvider {
         return Meta.from(this.values.poll());
     }
 
+    public Meta peek() {
+        if (values.isEmpty()) {
+            throw new IllegalStateException("empty meta");
+        }
+
+        return Meta.from(this.values.peek());
+    }
+
+
     public String resolveRemainValue() {
         String value = String.join(" ", values);
         values.clear();
         return value;
+    }
+
+    @Override
+    public String toString() {
+        return "MetaProvider{" +
+                "values=" + values +
+                '}';
     }
 }
