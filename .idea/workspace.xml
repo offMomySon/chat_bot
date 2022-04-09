@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c8a247a-e37a-49f4-b7e0-17643cfa4af0" name="Changes" comment="feat: 메타 체크 메시지 객체 구현">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/strategy/ChanningMetaChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/strategy/ChanningMetaCheckerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/ExcludeMetaChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/SkippableMetaChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/ExcludeMetaCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v4/SkippableMetaCheckerTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="2c8a247a-e37a-49f4-b7e0-17643cfa4af0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,12 +51,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="develop" />
-                    <option name="lastUsedInstant" value="1649079921" />
+                    <option name="branchName" value="feature/v3_chaining" />
+                    <option name="lastUsedInstant" value="1649498798" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="feature/v3_chaining" />
-                    <option name="lastUsedInstant" value="1649079920" />
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1649079921" />
                   </RecentBranch>
                 </list>
               </option>
@@ -109,7 +104,7 @@
       <recent name="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v3" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4 in chat_bot.test">
+  <component name="RunManager" selected="JUnit.UpdateMetaCheckerTest.test6">
     <configuration name="ChanningMetaCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chat_bot.test" />
       <extension name="coverage">
@@ -125,48 +120,50 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MetaCheckErrorMessageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChanningMetaCheckerTest.test1 (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chat_bot.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.result.*" />
+          <option name="PATTERN" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.strategy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.result" />
-      <option name="MAIN_CLASS_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.result.MetaCheckErrorMessageTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MetaTest.testAnyOneMatchMeta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="chat_bot.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta" />
-      <option name="MAIN_CLASS_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta.MetaTest" />
-      <option name="METHOD_NAME" value="testAnyOneMatchMeta(java.lang.String)" />
+      <option name="PACKAGE_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.strategy" />
+      <option name="MAIN_CLASS_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.strategy.ChanningMetaCheckerTest" />
+      <option name="METHOD_NAME" value="test1(java.lang.String,java.lang.String)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SkippableMetaCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChanningMetaCheckerTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chat_bot.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.result.*" />
+          <option name="PATTERN" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.strategy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4" />
-      <option name="MAIN_CLASS_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.SkippableMetaCheckerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.strategy" />
+      <option name="MAIN_CLASS_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.strategy.ChanningMetaCheckerTest" />
+      <option name="METHOD_NAME" value="test1(java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateMetaCheckerTest.test6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chat_bot.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2" />
+      <option name="MAIN_CLASS_NAME" value="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2.UpdateMetaCheckerTest" />
+      <option name="METHOD_NAME" value="test6(java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -187,11 +184,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UpdateMetaCheckerTest.test6" />
+        <item itemvalue="JUnit.ChanningMetaCheckerTest.test1 (1)" />
+        <item itemvalue="JUnit.ChanningMetaCheckerTest.test1" />
         <item itemvalue="JUnit.com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4 in chat_bot.test" />
         <item itemvalue="JUnit.ChanningMetaCheckerTest" />
-        <item itemvalue="JUnit.MetaCheckErrorMessageTest" />
-        <item itemvalue="JUnit.SkippableMetaCheckerTest" />
-        <item itemvalue="JUnit.MetaTest.testAnyOneMatchMeta" />
       </list>
     </recent_temporary>
   </component>
@@ -206,6 +203,7 @@
       <workItem from="1649156531590" duration="7260000" />
       <workItem from="1649242458539" duration="5923000" />
       <workItem from="1649355412530" duration="25760000" />
+      <workItem from="1649567338369" duration="2607000" />
     </task>
     <task id="LOCAL-00001" summary="feature: 메타배너 정보를 검사하는 배너체커 모듈 작성">
       <created>1649356019106</created>
@@ -454,6 +452,21 @@
     <MESSAGE value="feat: 어떤 요소던 매치 되는 Meta 기능 구현" />
     <MESSAGE value="feat: MetaProvider peek 기능 구현" />
     <option name="LAST_COMMIT_MESSAGE" value="feat: MetaProvider peek 기능 구현" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/jihun/chat_bot/cmdChekcer/metaChecker/system/v2/BannerMetaChecker.java</url>
+          <line>30</line>
+          <properties class="com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2.BannerMetaChecker" method="isMetaPartlyMatched">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

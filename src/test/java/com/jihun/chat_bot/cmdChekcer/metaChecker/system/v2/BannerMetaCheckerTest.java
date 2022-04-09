@@ -1,6 +1,7 @@
 package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2;
 
 import com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import org.assertj.core.api.Assertions;
@@ -21,7 +22,7 @@ class BannerMetaCheckerTest {
     })
     void test1(String _meta) {
         //given
-        BannerMetaChecker checker = new BannerMetaChecker(List.of(), _meta);
+        BannerMetaChecker checker = new BannerMetaChecker(List.of(), new LinkedList<>(List.of(_meta)));
 
         //when
         MetaCheckType actual = checker.check();
@@ -39,7 +40,7 @@ class BannerMetaCheckerTest {
     })
     void test2(String _meta) {
         //given
-        BannerMetaChecker checker = new BannerMetaChecker(List.of(), _meta);
+        BannerMetaChecker checker = new BannerMetaChecker(List.of(), new LinkedList<>(List.of(_meta)));
 
         //when
         MetaCheckType actual = checker.check();
@@ -53,7 +54,7 @@ class BannerMetaCheckerTest {
     @Test
     void test7() {
         //given
-        BannerMetaChecker bannerMetaChecker = new BannerMetaChecker(List.of(), "banner");
+        BannerMetaChecker bannerMetaChecker = new BannerMetaChecker(List.of(), new LinkedList<>(List.of("banner")));
         Set<String> possibleMeta = bannerMetaChecker.getPossibleMeta();
 
         //when

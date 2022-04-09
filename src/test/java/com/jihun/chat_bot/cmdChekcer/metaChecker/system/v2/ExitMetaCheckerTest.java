@@ -1,6 +1,7 @@
 package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2;
 
 import com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import org.assertj.core.api.Assertions;
@@ -21,7 +22,7 @@ class ExitMetaCheckerTest {
     })
     void test1(String _meta) {
         //given
-        ExitMetaChecker checker = new ExitMetaChecker(List.of(), _meta);
+        ExitMetaChecker checker = new ExitMetaChecker(List.of(), new LinkedList<>(List.of(_meta)));
 
         //when
         MetaCheckType actual = checker.check();
@@ -39,7 +40,7 @@ class ExitMetaCheckerTest {
     })
     void test2(String _meta) {
         //given
-        ExitMetaChecker checker = new ExitMetaChecker(List.of(), _meta);
+        ExitMetaChecker checker = new ExitMetaChecker(List.of(), new LinkedList<>(List.of(_meta)));
 
         //when
         MetaCheckType actual = checker.check();
@@ -58,7 +59,7 @@ class ExitMetaCheckerTest {
     })
     void test4(String _meta) {
         //given
-        ExitMetaChecker checker = new ExitMetaChecker(List.of(), _meta);
+        ExitMetaChecker checker = new ExitMetaChecker(List.of(), new LinkedList<>(List.of(_meta)));
 
         //when
         MetaCheckType actual = checker.check();
@@ -72,7 +73,7 @@ class ExitMetaCheckerTest {
     @Test
     void test7() {
         //given
-        ExitMetaChecker exitMetaChecker = new ExitMetaChecker(List.of(), "exit");
+        ExitMetaChecker exitMetaChecker = new ExitMetaChecker(List.of(), new LinkedList<>(List.of("exit")));
         Set<String> possibleMeta = exitMetaChecker.getPossibleMeta();
 
         //when

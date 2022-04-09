@@ -20,10 +20,10 @@ public class MetaProvider {
         }
 
         return values.stream()
-                .filter(Objects::nonNull)
-                .filter(s -> !s.isBlank())
-                .filter(s -> !s.isEmpty())
-                .collect(Collectors.toCollection(LinkedList::new));
+            .filter(Objects::nonNull)
+            .filter(s -> !s.isBlank())
+            .filter(s -> !s.isEmpty())
+            .collect(Collectors.toCollection(LinkedList::new));
     }
 
     public static MetaProvider from(String metas) {
@@ -32,8 +32,8 @@ public class MetaProvider {
         }
 
         return new MetaProvider(
-                Stream.of(metas.split(DELIMITER))
-                        .collect(Collectors.toCollection(LinkedList::new))
+            Stream.of(metas.split(DELIMITER))
+                .collect(Collectors.toCollection(LinkedList::new))
         );
     }
 
@@ -63,7 +63,11 @@ public class MetaProvider {
     @Override
     public String toString() {
         return "MetaProvider{" +
-                "values=" + values +
-                '}';
+            "values=" + values +
+            '}';
+    }
+
+    public boolean hasNext() {
+        return !values.isEmpty();
     }
 }

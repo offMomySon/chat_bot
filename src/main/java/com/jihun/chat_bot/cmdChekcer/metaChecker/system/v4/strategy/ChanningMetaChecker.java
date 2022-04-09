@@ -1,12 +1,11 @@
 package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.strategy;
 
-import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.result.MetaCheckResult;
 import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.MetaChecker;
 import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta.Meta;
 import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.meta.MetaProvider;
-import lombok.NonNull;
-
+import com.jihun.chat_bot.cmdChekcer.metaChecker.system.v4.result.MetaCheckResult;
 import java.util.Objects;
+import lombok.NonNull;
 
 public class ChanningMetaChecker {
     private final MetaChecker metaChecker;
@@ -26,13 +25,14 @@ public class ChanningMetaChecker {
         System.out.println("peek: " + meta);
 
         MetaCheckResult metaCheckResult = this.metaChecker.check(meta);
-        System.out.println("metaChecker= "+metaChecker.getClass().getSimpleName()+", result: " + metaCheckResult.isValid());
+        System.out.println(
+            "metaChecker= " + metaChecker.getClass().getSimpleName() + ", result: " + metaCheckResult.isValid());
 
         if (doesNotSkip(metaCheckResult)) {
             metaProvider.poll();
         }
 
-        if (shouldDoNext(metaCheckResult)) {
+        if (shouldDoNext(metaProvider, metaCheckResult)) {
             return nextChanningMetaChecker.next(metaProvider);
         }
 
@@ -43,7 +43,7 @@ public class ChanningMetaChecker {
         return metaCheckResult.isValid() && !metaCheckResult.getMeta().isAnyOneMatch();
     }
 
-    private boolean shouldDoNext(MetaCheckResult metaCheckResult) {
-        return metaCheckResult.isValid() && Objects.nonNull(nextChanningMetaChecker);
+    private boolean shouldDoNext(MetaProvider metaProvider, MetaCheckResult metaCheckResult) {
+        return metaCheckResult.isValid() && Objects.nonNull(nextChanningMetaChecker) && metaProvider.hasNext();
     }
 }

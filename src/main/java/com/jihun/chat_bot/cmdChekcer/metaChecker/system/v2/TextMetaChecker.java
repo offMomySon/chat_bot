@@ -2,12 +2,13 @@ package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2;
 
 import com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType;
 import java.util.List;
+import java.util.Queue;
 import java.util.Set;
 
 public class TextMetaChecker extends AbstractMetaChecker {
     private static final Set<String> MATCHER = Set.of("TXT");
 
-    public TextMetaChecker(List<MetaChecker> metaCheckers, String meta) {
+    public TextMetaChecker(List<MetaChecker> metaCheckers, Queue<String> meta) {
         super(metaCheckers, meta);
     }
 
