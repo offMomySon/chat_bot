@@ -1,6 +1,7 @@
 package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2;
 
 import com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import org.assertj.core.api.Assertions;
@@ -21,7 +22,7 @@ class FileMetaCheckerTest {
     })
     void test1(String _meta) {
         //given
-        FileMetaChecker checker = new FileMetaChecker(List.of(), _meta);
+        FileMetaChecker checker = new FileMetaChecker(List.of(), new LinkedList<>(List.of(_meta)));
 
         //when
         MetaCheckType actual = checker.check();
@@ -39,7 +40,7 @@ class FileMetaCheckerTest {
     })
     void test2(String _meta) {
         //given
-        FileMetaChecker checker = new FileMetaChecker(List.of(), _meta);
+        FileMetaChecker checker = new FileMetaChecker(List.of(), new LinkedList<>(List.of(_meta)));
 
         //when
         MetaCheckType actual = checker.check();
@@ -58,7 +59,7 @@ class FileMetaCheckerTest {
     })
     void test4(String _meta) {
         //given
-        FileMetaChecker checker = new FileMetaChecker(List.of(), _meta);
+        FileMetaChecker checker = new FileMetaChecker(List.of(), new LinkedList<>(List.of(_meta)));
 
         //when
         MetaCheckType actual = checker.check();
@@ -72,7 +73,7 @@ class FileMetaCheckerTest {
     @Test
     void test7() {
         //given
-        FileMetaChecker exitMetaChecker = new FileMetaChecker(List.of(), "file");
+        FileMetaChecker exitMetaChecker = new FileMetaChecker(List.of(), new LinkedList<>(List.of("file")));
         Set<String> possibleMeta = exitMetaChecker.getPossibleMeta();
 
         //when

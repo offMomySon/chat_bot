@@ -6,28 +6,30 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Queue;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public abstract class AbstractMetaChecker implements MetaChecker {
     protected final List<MetaChecker> nextMetaCheckers;
-    protected final String meta;
+    protected Queue<String> queue;
+//    protected final String meta;
 
-    protected AbstractMetaChecker(List<MetaChecker> nextMetaCheckers, String meta) {
+    protected AbstractMetaChecker(List<MetaChecker> nextMetaCheckers, Queue<String> meta) {
         this.nextMetaCheckers = validateMetaCheckers(nextMetaCheckers);
-        this.meta = validateMeta(meta);
+        this.queue = meta;
     }
-
-    private String validateMeta(String meta) {
-        if (Objects.isNull(meta)) {
-            throw new RuntimeException("meta 가 null 입니다.");
-        }
-        if (meta.isBlank() || meta.isEmpty()) {
-            throw new RuntimeException("meta 가 존재하지 않습니다.");
-        }
-
-        return meta;
-    }
+//
+//    private String validateMeta(String meta) {
+//        if (Objects.isNull(meta)) {
+//            throw new RuntimeException("meta 가 null 입니다.");
+//        }
+//        if (meta.isBlank() || meta.isEmpty()) {
+//            throw new RuntimeException("meta 가 존재하지 않습니다.");
+//        }
+//
+//        return meta;
+//    }
 
     private List<MetaChecker> validateMetaCheckers(List<MetaChecker> nextMetaCheckers) {
         if (Objects.isNull(nextMetaCheckers)) {
@@ -65,10 +67,12 @@ public abstract class AbstractMetaChecker implements MetaChecker {
             }
         }
 
+        String poll = queue.poll();
         if (partlyMatchedMetas.isEmpty()) {
-            return MetaErrorMsg.create(meta, totallyFailedMetas);
+
+            return MetaErrorMsg.create(poll, totallyFailedMetas);
         }
 
-        return MetaErrorMsg.create(meta, partlyMatchedMetas);
+        return MetaErrorMsg.create(poll, partlyMatchedMetas);
     }
 }

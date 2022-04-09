@@ -2,12 +2,13 @@ package com.jihun.chat_bot.cmdChekcer.metaChecker.system.v2;
 
 import com.jihun.chat_bot.cmdChekcer.metaChecker.MetaCheckType;
 import java.util.List;
+import java.util.Queue;
 import java.util.Set;
 
 public class UpdateMetaChecker extends AbstractMetaChecker {
     private static final Set<String> MATCHER = Set.of("u", "update");
 
-    public UpdateMetaChecker(List<MetaChecker> nextMetaCheckers, String meta) {
+    public UpdateMetaChecker(List<MetaChecker> nextMetaCheckers, Queue<String> meta) {
         super(nextMetaCheckers, meta);
     }
 
@@ -24,11 +25,11 @@ public class UpdateMetaChecker extends AbstractMetaChecker {
     }
 
     private boolean isMatch() {
-        return MATCHER.contains(meta);
+        return MATCHER.contains(queue.peek());
     }
 
     protected boolean isMetaPartlyMatched() {
-        return MATCHER.stream().anyMatch(m -> m.charAt(0) == meta.charAt(0));
+        return MATCHER.stream().anyMatch(m -> m.charAt(0) == queue.peek().charAt(0));
     }
 
     public Set<String> getPossibleMeta() {
