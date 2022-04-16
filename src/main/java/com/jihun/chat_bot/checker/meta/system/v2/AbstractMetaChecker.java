@@ -1,20 +1,14 @@
 package com.jihun.chat_bot.checker.meta.system.v2;
 
-import com.jihun.chat_bot.checker.meta.MetaCheckType;
-import com.jihun.chat_bot.message.MetaErrorMsg;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
+import com.jihun.chat_bot.checker.meta.result.MetaCheckResult;
 import java.util.Objects;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public abstract class AbstractMetaChecker implements MetaChecker {
-    protected final List<MetaChecker> nextMetaCheckers;
+    protected final MetaChecker nextMetaChecker;
     protected final String meta;
 
-    protected AbstractMetaChecker(List<MetaChecker> nextMetaCheckers, String meta) {
-        this.nextMetaCheckers = validateMetaCheckers(nextMetaCheckers);
+    public AbstractMetaChecker(MetaChecker nextMetaChecker, String meta) {
+        this.nextMetaChecker = nextMetaChecker;
         this.meta = validateMeta(meta);
     }
 
@@ -25,50 +19,26 @@ public abstract class AbstractMetaChecker implements MetaChecker {
         if (meta.isBlank() || meta.isEmpty()) {
             throw new RuntimeException("meta 가 존재하지 않습니다.");
         }
-
         return meta;
     }
 
-    private List<MetaChecker> validateMetaCheckers(List<MetaChecker> nextMetaCheckers) {
-        if (Objects.isNull(nextMetaCheckers)) {
-            throw new RuntimeException("nextMetaCheckers 가 null 입니다.");
+    @Override
+    public MetaCheckResult check() {
+        if (lastChecker()) {
+            return MetaCheckResult.success();
+        }
+        if (notContain()) {
+            return MetaCheckResult.fail(getMeta());
         }
 
-        return Collections.unmodifiableList(
-            nextMetaCheckers.stream().filter(Objects::nonNull).collect(Collectors.toList()));
+        return nextMetaChecker.check();
     }
 
-    protected abstract boolean isMetaPartlyMatched();
+    private boolean lastChecker() {
+        return Objects.isNull(nextMetaChecker);
+    }
 
-    @Override
-    public MetaErrorMsg createErrorMsg() {
-        if (nextMetaCheckers.isEmpty()) {
-            return MetaErrorMsg.EMPTY;
-        }
-
-        Set<String> partlyMatchedMetas = new HashSet<>();
-        Set<String> totallyFailedMetas = new HashSet<>();
-
-        for (MetaChecker metaChecker : nextMetaCheckers) {
-            MetaCheckType check = metaChecker.check();
-
-            if (check == MetaCheckType.MATCH_SUCCESS) {
-                return metaChecker.createErrorMsg();
-            }
-
-            if (check == MetaCheckType.MATCH_FAIL_PARTLY_MATCHED) {
-                partlyMatchedMetas.addAll(metaChecker.getPossibleMeta());
-            }
-
-            if (check == MetaCheckType.MATCH_FAIL_TOTALLY) {
-                totallyFailedMetas.addAll(metaChecker.getPossibleMeta());
-            }
-        }
-
-        if (partlyMatchedMetas.isEmpty()) {
-            return MetaErrorMsg.create(meta, totallyFailedMetas);
-        }
-
-        return MetaErrorMsg.create(meta, partlyMatchedMetas);
+    private boolean notContain() {
+        return getMeta().contains(meta);
     }
 }
