@@ -10,32 +10,11 @@ import static com.jihun.chat_bot.checker.meta.MetaCheckType.MATCH_SUCCESS;
 public class FileMetaChecker extends AbstractMetaChecker {
     private static final Set<String> MATCHER = Set.of("f", "file");
 
-    public FileMetaChecker(List<MetaChecker> nextMetaCheckers, String meta) {
-        super(nextMetaCheckers, meta);
+    public FileMetaChecker(MetaChecker nextMetaChecker, String meta) {
+        super(nextMetaChecker, meta);
     }
 
-    @Override
-    public MetaCheckType check() {
-        if (isMatch()) {
-            return MATCH_SUCCESS;
-        }
-
-        if (isMetaPartlyMatched()) {
-            return MATCH_FAIL_PARTLY_MATCHED;
-        }
-
-        return MATCH_FAIL_TOTALLY;
-    }
-
-    private boolean isMatch() {
-        return MATCHER.contains(meta);
-    }
-
-    protected boolean isMetaPartlyMatched() {
-        return MATCHER.stream().anyMatch(m -> m.charAt(0) == meta.charAt(0));
-    }
-
-    public Set<String> getPossibleMeta() {
+    public Set<String> getMeta() {
         return MATCHER;
     }
 }
